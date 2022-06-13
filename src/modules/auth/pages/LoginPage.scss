@@ -1,0 +1,13 @@
+.btn-wrap{
+  max-width: 560px;
+  width: 100%;
+  display: flex;
+  justify-content: right;
+
+  
+    a {
+      transform: translateY(-90px);
+      // transform: translateX(-20px);
+    }
+  
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import LoginForm2 from '../components/LoginForm2';
+// import LoginForm from '../components/LoginForm2';
 import logo from '../../../logo-420-x-108.png';
 import { ILoginParams } from '../../../models/auth';
 import { useDispatch } from 'react-redux';
@@ -15,8 +16,10 @@ import { ACCESS_TOKEN_KEY } from '../../../utils/constants';
 import { ROUTES } from '../../../configs/routes';
 import {push,replace } from 'connected-react-router';
 import { getErrorMessageResponse } from '../../../utils';
+import { Routes } from '../../../Routes';
 // import './LoginPage2.css'
-
+import './LoginPage.scss'
+import { FormattedMessage } from 'react-intl';
 
 
 const LoginPage2 = () => {
@@ -58,8 +61,14 @@ const LoginPage2 = () => {
     >
     <img src={logo} alt="" style={{ maxWidth: '250px', margin: '32px' }}/>
     <LoginForm2 onLogin={onLogin} loading={loading} errorMessage={errorMessage} />
-    {/* <LoginForm onLogin={onLogin} loading={loading} errorMessage={errorMessage} /> */}
+    <div className='btn-wrap'>
+  
+    <a href='/sign-up'>
+    
+      <FormattedMessage id='register'></FormattedMessage>
+    </a>
 
+    </div>
   </div>
   )
 }

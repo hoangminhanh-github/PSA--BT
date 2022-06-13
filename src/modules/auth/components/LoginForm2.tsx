@@ -1,9 +1,12 @@
 
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
-import { ILoginParams, ILoginValidation } from '../../../models/auth';
+// import { ILoginParams, ILoginValidation } from '../../../models/auth';
+import {ILoginParams, ILoginValidation } from 'models/auth'
 import { validateLogin, validLogin } from '../utils';
 import Input from './Input'
+
+
 // import './LoginForm2.css'
 interface Props {
   onLogin(values: ILoginParams): void;
@@ -11,6 +14,9 @@ interface Props {
   errorMessage: string;
 }
 const LoginForm=(props:Props)=>{
+  // 
+  // 
+  // 
   const { onLogin, loading, errorMessage } = props;
   const [formValues, setFormValues] = React.useState<ILoginParams>({ email: '', password: '', rememberMe: false });
   const [validate, setValidate] = React.useState<ILoginValidation>();
@@ -110,6 +116,7 @@ const LoginForm=(props:Props)=>{
           </button>
         </div>
       </div>
+    
     </form>
    </>
   )
