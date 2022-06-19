@@ -16,7 +16,7 @@ function App() {
   const dispatch = useDispatch<ThunkDispatch<AppState, null, Action<string>>>();
   const { user } = useSelector((state: AppState) => ({
     user: state.profile.user,
-  }));
+  }) || {});
 
   const getProfile = React.useCallback(async () => {
     const accessToken = Cookies.get(ACCESS_TOKEN_KEY);

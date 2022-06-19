@@ -9,7 +9,7 @@ interface Props {
   errorMessage: string;
 }
 
-const LoginForm = (props: Props) => {
+const LoginForm = (props:Props) => {
   const { onLogin, loading, errorMessage } = props;
   
   

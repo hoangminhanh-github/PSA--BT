@@ -28,3 +28,10 @@ export interface ILocationParams {
   name: string;
   pid: number | string;
 }
+export interface ditcum {
+  albumId: number;
+  id: number;
+  thumbnailUrl: string;
+  title: string;
+  url: string;
+}

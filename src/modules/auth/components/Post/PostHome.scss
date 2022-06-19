@@ -1,0 +1,32 @@
+.home {
+  width: 70%;
+  margin: auto;
+  flex-direction: column;
+}
+span{
+  display: inline;
+  margin-bottom: 4px;
+}
+.post-item{
+  display: flex;
+  align-items: center;
+}
+.span-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.home-item {
+  input {
+    border: none;
+
+    &:hover{
+      border: .2px solid #ccc;
+    }
+ 
+  }
+  .btn-wrap{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
