@@ -13,7 +13,7 @@ interface Props {
   loading: boolean;
   errorMessage: string;
 }
-const LoginForm=(props:Props)=>{
+const LoginForm2=(props:Props)=>{
   // 
   // 
   // 
@@ -124,4 +124,4 @@ const LoginForm=(props:Props)=>{
 }
 
 
-export default LoginForm;
+export default LoginForm2;

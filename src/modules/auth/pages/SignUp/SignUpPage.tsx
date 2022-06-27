@@ -101,9 +101,9 @@ const SignUpPage = () => {
       password: Yup
       .string()
         .required("Required")
-        .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$/,
-          "Password must be 4-19 characters and contain at least one letter, one number and a special character"
-        )
+        // .matches(/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{4,}$/,
+        //   "Password must be 4-19 characters and contain at least one letter, one number and a special character"
+        // )
         ,
         repeatPassword: Yup.string()
         .required("Required")

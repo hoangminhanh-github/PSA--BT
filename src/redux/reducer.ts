@@ -1,14 +1,14 @@
-import { connectRouter, RouterState } from 'connected-react-router';
-import { History } from 'history';
-import { combineReducers } from 'redux';
-import authReducer, { AuthState } from '../modules/auth/redux/authReducer';
-import intlReducer, { IntlState } from '../modules/intl/redux/intlReducer';
-import PostReducer, { PostState } from 'modules/auth/components/Post/redux/PostReducer';
+import { connectRouter, RouterState } from 'connected-react-router'
+import { History } from 'history'
+import { combineReducers } from 'redux'
+import authReducer, { AuthState } from '../modules/auth/redux/authReducer'
+import intlReducer, { IntlState } from '../modules/intl/redux/intlReducer'
+import PostReducer, { PostState } from 'modules/Post/redux/PostReducer'
 export interface AppState {
-  router: RouterState;
-  intl: IntlState;
-  profile: AuthState;
-  posts: PostState;
+  router: RouterState
+  intl: IntlState
+  profile: AuthState
+  posts: PostState
 }
 
 export default function createRootReducer(history: History) {
@@ -17,5 +17,5 @@ export default function createRootReducer(history: History) {
     intl: intlReducer,
     profile: authReducer,
     posts: PostReducer,
-  });
+  })
 }

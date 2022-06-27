@@ -1,13 +1,14 @@
 .home {
-  width: 70%;
-  margin: auto;
+  transform: translate(300px, 80px);
+  display: table;
+  width: 200px;
   flex-direction: column;
 }
-span{
+span {
   display: inline;
   margin-bottom: 4px;
 }
-.post-item{
+.post-item {
   display: flex;
   align-items: center;
 }
@@ -19,12 +20,11 @@ span{
   input {
     border: none;
 
-    &:hover{
-      border: .2px solid #ccc;
+    &:hover {
+      border: 0.2px solid #ccc;
     }
- 
   }
-  .btn-wrap{
+  .btn-wrap {
     display: flex;
     flex-direction: column;
     width: 100%;

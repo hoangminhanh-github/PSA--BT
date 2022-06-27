@@ -5,7 +5,7 @@ export interface IProps{
   post:ditcum
 }
 import { useDispatch } from 'react-redux'
-import {setInputChange} from 'modules/auth/components/Post/redux/PostReducer'
+import {setInputChange} from 'modules/Post/redux/PostReducer'
 
 const PostItems: React.FunctionComponent<PropsWithChildren<unknown>> & any = (props:IProps) => {
 
@@ -23,17 +23,14 @@ const PostItems: React.FunctionComponent<PropsWithChildren<unknown>> & any = (pr
   
     <div className='home-item'>
       {
-       
-            <div  className="post-item" >
-              <img src={post.thumbnailUrl} alt="" />
-            <div className="btn-wrap">
-              <input type="text" value={input} name={post.id.toString()} placeholder={post.title} onChange={handleChange}/>
-              <span>{window.Date.now()}</span>
+        <div  className="post-item" >
+          <img src={post.thumbnailUrl} alt="" />
+        <div className="btn-wrap">
+          <input type="text" value={input} name={post.id.toString()} placeholder={post.title} onChange={handleChange}/>
+          <span>{window.Date.now()}</span>
 
-            </div>
-            </div>
-          
-       
+        </div>
+        </div>
       }
     </div>
   )

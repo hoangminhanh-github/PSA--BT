@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
-import LoginForm2 from '../components/LoginForm2';
+import LoginForm2 from '../../components/LoginForm2';
 // import LoginForm from '../components/LoginForm2';
-import logo from '../../../logo-420-x-108.png';
-import { ILoginParams } from '../../../models/auth';
+import logo from '../../../../logo-420-x-108.png';
+// import logo from '../../../../../'
+import { ILoginParams } from '../../../../models/auth';
 import { useDispatch } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
-import { AppState } from '../../../redux/reducer';
+import { AppState } from '../../../../redux/reducer';
 import { Action } from 'redux';
-import { fetchThunk } from '../../common/redux/thunk';
-import { API_PATHS } from '../../../configs/api';
-import { RESPONSE_STATUS_SUCCESS } from '../../../utils/httpResponseCode';
-import { setUserInfo } from '../redux/authReducer';
+import { fetchThunk } from '../../../common/redux/thunk';
+import { API_PATHS } from 'configs/api';
+import { RESPONSE_STATUS_SUCCESS } from '../../../../utils/httpResponseCode';
+import { setUserInfo } from '../../redux/authReducer';
 import Cookies from 'js-cookie';
-import { ACCESS_TOKEN_KEY } from '../../../utils/constants';
-import { ROUTES } from '../../../configs/routes';
+import { ACCESS_TOKEN_KEY } from '../../../../utils/constants';
+import { ROUTES } from '../../../../configs/routes';
 import {push,replace } from 'connected-react-router';
-import { getErrorMessageResponse } from '../../../utils';
-import { Routes } from '../../../Routes';
+import { getErrorMessageResponse } from '../../../../utils';
+import { Routes } from '../../../../Routes';
 // import './LoginPage2.css'
 import './LoginPage.scss'
 import { FormattedMessage } from 'react-intl';
