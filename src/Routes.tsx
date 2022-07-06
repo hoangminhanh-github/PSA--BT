@@ -15,6 +15,7 @@ const Table = lazy(() => import('./modules/Table/Table'))
 const Profile = lazy(() => import('./modules/Profile/Profile'))
 const Navbar = lazy(() => import('./modules/Navbar/Navbar'))
 const Category = lazy(() => import('./modules/Category/Category'))
+const Product = lazy(() => import('./modules/Product/Product'))
 
 interface Props {}
 
@@ -38,6 +39,7 @@ export const Routes = (props: Props) => {
           <Route path={ROUTES.table} component={Table} />
           <Route path={ROUTES.profile} component={Profile} />
           <Route path={ROUTES.contact} component={ContactPage} />
+          <Route path={ROUTES.product} component={Product} />
           <Route path="/" component={LoginPage2} />
         </Switch>
       </Suspense>

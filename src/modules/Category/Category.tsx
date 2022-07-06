@@ -13,7 +13,7 @@ const Category = () => {
         <li>
           <details>
             <summary>Catalog</summary>
-            <Link to="/posts">
+            <Link to="/product">
               Product<BsFillTagsFill className="icons"></BsFillTagsFill>
             </Link>
           </details>

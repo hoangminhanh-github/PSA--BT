@@ -1,0 +1,12 @@
+.product {
+  -webkit-transform: translate(256px, 80px);
+          transform: translate(256px, 80px);
+  display: table;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #1b1b38;
+}
+/*# sourceMappingURL=Product.css.map */

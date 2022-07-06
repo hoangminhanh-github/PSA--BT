@@ -1,0 +1,57 @@
+img {
+  -webkit-transform: translateX(127%);
+          transform: translateX(127%);
+}
+
+.infoform {
+  min-height: 1000px;
+  margin: auto;
+  max-width: 24%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+label {
+  margin-top: 1rem;
+}
+
+input {
+  border-bottom: 1px solid black;
+  padding-bottom: 0.25rem;
+  outline: none;
+  border-radius: 6px;
+  font-size: .8rem;
+}
+
+button {
+  cursor: pointer;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 0.5rem;
+  background-color: #68bbff;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+.errorMsg {
+  max-width: 100%;
+  font-size: 0.75rem;
+  color: #f86a6a;
+}
+
+select {
+  border-radius: 9px;
+  font-size: .8rem;
+}
+/*# sourceMappingURL=SignUp.css.map */

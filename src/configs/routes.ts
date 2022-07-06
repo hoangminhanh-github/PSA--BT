@@ -6,4 +6,5 @@ export const ROUTES = {
   posts: '/posts',
   table: '/table',
   profile: '/profile',
+  product: '/product',
 }

@@ -1,0 +1,61 @@
+table {
+  margin-left: 16px;
+
+  height: 100%;
+  background-color: rgb(50, 50, 89);
+  th,
+  td {
+    color: white;
+    // border-style: hidden;
+  }
+  td {
+    // display: flex;
+    // align-items: center;
+  }
+  .checkbox {
+    margin-right: 8px;
+    position: relative;
+
+    &::after {
+      right: -6px;
+      position: absolute;
+      content: '';
+      height: 16px;
+      width: 1px;
+      background-color: white;
+    }
+  }
+  button {
+    position: relative;
+    font-size: 24px;
+    color: white;
+    // padding: 2px;
+    border-radius: 4px;
+    background-color: #b18bff;
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 40px;
+      /* background-color: red; */
+      left: -14px;
+      border: 1px dashed white;
+    }
+  }
+}
+.pagination {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  font-size: 1.2rem;
+  gap: 5px;
+}
+.pagination .page-num {
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 400;
+}
