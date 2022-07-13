@@ -1,0 +1,111 @@
+@import 'react-date-range/dist/styles.css'; // main style file
+@import 'react-date-range/dist/theme/default.css'; // theme css file
+.filter {
+  margin-bottom: 54px;
+  padding-top: 20px;
+  width: 80%;
+  margin-left: 16px;
+  height: 100%;
+  color: white;
+
+  &-main {
+    color: white;
+    background-color: #323259;
+    width: 100%;
+    &__top {
+      margin: 0 28px;
+      display: grid;
+      /* grid-auto-columns: 1fr 1fr 1fr; */
+      gap: 45px;
+      grid-template-columns: 1fr 1fr 1fr 0.5fr 0.5fr;
+      align-items: center;
+      height: 81px;
+
+      input,
+      select {
+        border-radius: 2px;
+        color: white;
+        background-color: #1b1b38;
+        height: 38px;
+        overflow: scroll;
+        width: 100%;
+      }
+      button {
+        height: 38px;
+        border-radius: 4px;
+        background-color: #b18bff;
+      }
+      option {
+        height: 38px;
+        margin-right: 50px;
+      }
+    }
+  }
+}
+.filter-main-bot {
+  color: white;
+  display: flex;
+  &__input {
+    width: 36%;
+    input,
+    select,
+    option {
+      width: 254px;
+      height: 40px;
+      background-color: rgb(37, 37, 71);
+      color: white;
+      border-radius: 3px;
+      border: 1px solid #13132c;
+    }
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+  }
+  li + li {
+    margin-top: 8px;
+  }
+  li:last-child {
+    padding-bottom: 20px;
+  }
+
+  &__checkbox {
+    color: white;
+    .date-ranger {
+      margin-top: 20px;
+      margin-left: 40px;
+    }
+
+    .rs-picker-toggle-placeholder,
+    .rs-picker-toggle-caret.rs-icon {
+      display: none;
+    }
+    margin-left: 40px;
+    span,
+    input {
+      margin-left: 12px;
+    }
+    .checkbox {
+      border-radius: 20px;
+    }
+
+    &-date {
+      display: block;
+    }
+  }
+}
+
+// .select-item .item-renderer {
+//   display: flex;
+//   align-items: center;
+//   width: 100%;
+//   justify-content: space-around;
+// }
+// .select-item .item-renderer span {
+//   color: red;
+//   width: 600px;
+//   text-align: right;
+// }
+// .select-item .item-renderer input {
+//   border: 1px solid pink;
+// }

@@ -11,7 +11,7 @@ const LoginPage2 = lazy(() => import('./modules/auth/pages/Login/LoginPage2'))
 // const LoginPage = lazy(() => import('./modules/auth/pages/LoginPage'));
 const SignUpPage = lazy(() => import('./modules/auth/pages/SignUp/SignUpPage'))
 const Posts = lazy(() => import('./modules/Post/PostHome'))
-const Table = lazy(() => import('./modules/Table/Table'))
+// const Table = lazy(() => import('./modules/Table/Table'))
 const Profile = lazy(() => import('./modules/Profile/Profile'))
 const Navbar = lazy(() => import('./modules/Navbar/Navbar'))
 const Category = lazy(() => import('./modules/Category/Category'))
@@ -36,7 +36,7 @@ export const Routes = (props: Props) => {
           <Route path={ROUTES.signUp} component={SignUpPage}></Route>
           <ProtectedRoute path={ROUTES.home} component={HomePage} />
           <Route path={ROUTES.posts} component={Posts} />
-          <Route path={ROUTES.table} component={Table} />
+          {/* <Route path={ROUTES.table} component={Table} /> */}
           <Route path={ROUTES.profile} component={Profile} />
           <Route path={ROUTES.contact} component={ContactPage} />
           <Route path={ROUTES.product} component={Product} />
