@@ -14,7 +14,7 @@ const TableItem = (props: IProps) => {
       <tr key={key}>
         <th scope="row" style={{ width: '74px' }}>
           <input type="checkbox" className="checkbox" name="" id="" />
-          <FaPowerOff></FaPowerOff>
+          {product.amount === '0' ? <FaPowerOff></FaPowerOff> : <FaPowerOff style={{ color: 'green' }}></FaPowerOff>}
         </th>
         <td>{product.sku}</td>
         <td title={product.name} className="hehe">

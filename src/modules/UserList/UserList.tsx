@@ -29,7 +29,8 @@ const UserList = () => {
     getUserList()
     getUserCountry()
   }, [])
-  // console.log(userList)
+  console.log(userList)
+  console.log(countries)
   return (
     <div className="user-list">
       <Filter data={countries}></Filter>

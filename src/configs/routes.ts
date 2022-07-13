@@ -7,4 +7,5 @@ export const ROUTES = {
   table: '/table',
   profile: '/profile',
   product: '/product',
+  userList: '/user-list',
 }

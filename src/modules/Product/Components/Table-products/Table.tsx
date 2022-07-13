@@ -6,7 +6,7 @@ import ReactPaginate from 'react-paginate'
 export interface IProps {
   data: IProduct[]
 }
-const PAGE_COUNT = 5
+const PAGE_COUNT = 10
 const Table = (props: IProps) => {
   const products = props.data
   const [currentItems, setCurrentItems] = useState<IProduct[]>(products.slice(0, PAGE_COUNT))
@@ -59,7 +59,7 @@ const Table = (props: IProps) => {
         breakLabel="..."
         nextLabel="next >"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
+        pageRangeDisplayed={PAGE_COUNT}
         pageCount={pageCount}
         previousLabel="< previous"
         // renderOnZeroPageCount={null}
