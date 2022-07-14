@@ -6,8 +6,27 @@ import { fetchThunk } from 'modules/common/redux/thunk'
 import { useDispatch } from 'react-redux'
 import Filter from 'modules/UserList/Components/Filter/Filter'
 import Table from 'modules/UserList/Components/Table-user/Table'
+import { setUserListRD } from './redux/userListReducer'
+import { IUser } from 'modules/UserList/Components/Table-user/Table'
 const UserList = () => {
-  const [userList, setUserList] = useState()
+  const test: IUser[] = [
+    {
+      access_level: 'Administrator',
+      created: '1560178232',
+      fistName: 'Josh',
+      lastName: 'Finamore',
+      last_login: '1657769734',
+      order: { order_as_buyer: 0, order_as_buyer_total: 0 },
+      product: 0,
+      profile_id: '9',
+      storeName: null,
+      vendor: 'admin.training@powergatesoftware.com',
+      vendor_id: '3',
+      wishlist: '0',
+    },
+  ]
+
+  const [userList, setUserList] = useState<IUser[]>()
   const [countries, setCountries] = useState()
   const dispatch = useDispatch()
 
@@ -29,8 +48,13 @@ const UserList = () => {
     getUserList()
     getUserCountry()
   }, [])
-  console.log(userList)
-  console.log(countries)
+
+  // gfgfgf
+  useEffect(() => {
+    // userList && dispatch(setUserList(userList))
+    userList && dispatch(setUserListRD(userList))
+  }, [userList])
+
   return (
     <div className="user-list">
       <Filter data={countries}></Filter>
