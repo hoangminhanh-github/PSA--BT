@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import axios from 'axios'
 import './Filter.scss'
 import { waitFor } from '@testing-library/react'
-import { Calendar } from 'react-date-range'
 import DateRangePicker from 'rsuite/DateRangePicker'
+import { useDispatch } from 'react-redux'
 
 import { IProduct, ICategory } from 'models/product'
 import Multi_Select from 'utils/MultiSelect'
+import { setUserSearch_search } from 'modules/UserList/redux/searchReducer'
 interface country {
   active_currency: null
   code: string
@@ -21,7 +22,14 @@ interface IProps {
   data?: country[]
 }
 const Filter = (props: IProps) => {
+  const filter__input = useRef()
+
+  const dispatch = useDispatch()
   const countries = props.data
+
+  // const handleSearch=()=>{
+  //   dispatch(setUserSearch_search())
+  // }
   console.log(countries)
   return (
     <div className="filter">
@@ -30,7 +38,14 @@ const Filter = (props: IProps) => {
         <details>
           <summary className="filter-main__top">
             {/* imput */}
-            <input type="text" placeholder="Search the keyword" />
+            <input
+              type="text"
+              placeholder="Search the keyword"
+              onChange={(e) => {
+                dispatch(setUserSearch_search(e.target.value))
+              }}
+              // ref={filter__input}
+            />
 
             {/* select membership */}
             <select name="" id="" placeholder="All membership">

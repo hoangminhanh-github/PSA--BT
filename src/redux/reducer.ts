@@ -5,12 +5,14 @@ import authReducer, { AuthState } from '../modules/auth/redux/authReducer'
 import intlReducer, { IntlState } from '../modules/intl/redux/intlReducer'
 import PostReducer, { PostState } from 'modules/Post/redux/PostReducer'
 import userListReducer, { IUserListState } from 'modules/UserList/redux/userListReducer'
+import searchReducer, { ISearch } from 'modules/UserList/redux/searchReducer'
 export interface AppState {
   router: RouterState
   intl: IntlState
   profile: AuthState
   posts: PostState
   userList: IUserListState
+  userSearch: ISearch
 }
 
 export default function createRootReducer(history: History) {
@@ -20,5 +22,6 @@ export default function createRootReducer(history: History) {
     profile: authReducer,
     posts: PostReducer,
     userList: userListReducer,
+    userSearch: searchReducer,
   })
 }

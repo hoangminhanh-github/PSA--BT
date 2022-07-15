@@ -8,7 +8,13 @@ import Filter from 'modules/UserList/Components/Filter/Filter'
 import Table from 'modules/UserList/Components/Table-user/Table'
 import { setUserListRD } from './redux/userListReducer'
 import { IUser } from 'modules/UserList/Components/Table-user/Table'
+
+import { userRemaining } from 'modules/UserList/redux/selector'
+import { useSelector } from 'react-redux'
 const UserList = () => {
+  const test2 = useSelector(userRemaining)
+  console.log(test2)
+
   const test: IUser[] = [
     {
       access_level: 'Administrator',
@@ -59,7 +65,7 @@ const UserList = () => {
     <div className="user-list">
       <Filter data={countries}></Filter>
       {/* <Table data={userList}></Table> */}
-      {userList && <Table data={userList}></Table>}
+      {test2 && <Table data={test2}></Table>}
     </div>
   )
 }
