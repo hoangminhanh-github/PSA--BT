@@ -8,4 +8,5 @@ export const ROUTES = {
   profile: '/profile',
   product: '/product',
   userList: '/user-list',
+  userCreate: '/user-create',
 }

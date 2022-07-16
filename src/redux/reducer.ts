@@ -4,8 +4,8 @@ import { combineReducers } from 'redux'
 import authReducer, { AuthState } from '../modules/auth/redux/authReducer'
 import intlReducer, { IntlState } from '../modules/intl/redux/intlReducer'
 import PostReducer, { PostState } from 'modules/Post/redux/PostReducer'
-import userListReducer, { IUserListState } from 'modules/UserList/redux/userListReducer'
-import searchReducer, { ISearch } from 'modules/UserList/redux/searchReducer'
+import userListReducer, { IUserListState } from 'modules/users/UserList/redux/userListReducer'
+import searchReducer, { ISearch } from 'modules/users/UserList/redux/searchReducer'
 export interface AppState {
   router: RouterState
   intl: IntlState

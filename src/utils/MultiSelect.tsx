@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { MultiSelect } from 'react-multi-select-component'
 import { useDispatch } from 'react-redux'
 
-import { setUserSearch_types } from 'modules/UserList/redux/searchReducer'
+import { setUserSearch_types } from 'modules/users/UserList/redux/searchReducer'
 
 interface IProps {
   options: object[]

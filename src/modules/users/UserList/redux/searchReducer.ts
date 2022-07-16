@@ -1,5 +1,5 @@
 import { ActionType, createCustomAction, getType } from 'typesafe-actions'
-import { IUser } from 'modules/UserList/Components/Table-user/Table'
+import { IUser } from 'modules/users/UserList/Components/Table-user/Table'
 
 export interface ISearch {
   userSearch: { userSearch: string; userTypes: [] }

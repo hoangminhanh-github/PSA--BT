@@ -4,12 +4,12 @@ import axios from 'axios'
 import './UserList.scss'
 import { fetchThunk } from 'modules/common/redux/thunk'
 import { useDispatch } from 'react-redux'
-import Filter from 'modules/UserList/Components/Filter/Filter'
-import Table from 'modules/UserList/Components/Table-user/Table'
+import Filter from 'modules/users/UserList/Components/Filter/Filter'
+import Table from 'modules/users/UserList/Components/Table-user/Table'
 import { setUserListRD } from './redux/userListReducer'
-import { IUser } from 'modules/UserList/Components/Table-user/Table'
+import { IUser } from 'modules/users/UserList/Components/Table-user/Table'
 
-import { userRemaining } from 'modules/UserList/redux/selector'
+import { userRemaining } from 'modules/users/UserList/redux/selector'
 import { useSelector } from 'react-redux'
 const UserList = () => {
   const test2 = useSelector(userRemaining)

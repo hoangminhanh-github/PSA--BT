@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import './Table.scss'
 import { AiOutlineDelete } from 'react-icons/ai'
 import ReactPaginate from 'react-paginate'
+import { replace } from 'connected-react-router'
+import { Dispatch } from 'react'
 
-import TableItem from 'modules/UserList/Components/Table-user/TableItem'
+import TableItem from 'modules/users/UserList/Components/Table-user/TableItem'
+import './Table.scss'
+import { useDispatch } from 'react-redux'
+import { Route } from 'react-router'
+import { ROUTES } from 'configs/routes'
 export interface IUser {
   access_level: string
   created: string
@@ -24,6 +29,7 @@ interface IProps {
 }
 
 const Table = (props: IProps) => {
+  const dispatch = useDispatch()
   const PAGE_COUNT = 10
   const userList = props.data
 
@@ -44,6 +50,9 @@ const Table = (props: IProps) => {
 
   return (
     <>
+      <button className="btn-create-user" onClick={() => dispatch(replace(ROUTES.userCreate))}>
+        Create User
+      </button>
       <table className="table">
         <thead>
           <tr>

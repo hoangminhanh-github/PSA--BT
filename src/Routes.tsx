@@ -16,7 +16,8 @@ const Profile = lazy(() => import('./modules/Profile/Profile'))
 const Navbar = lazy(() => import('./modules/Navbar/Navbar'))
 const Category = lazy(() => import('./modules/Category/Category'))
 const Product = lazy(() => import('./modules/Product/Product'))
-const UserList = lazy(() => import('./modules/UserList/UserList'))
+const UserList = lazy(() => import('./modules/users/UserList/UserList'))
+const UserCreate = lazy(() => import('./modules/users/UserCreate/UserCreate'))
 
 interface Props {}
 
@@ -37,11 +38,14 @@ export const Routes = (props: Props) => {
           <Route path={ROUTES.signUp} component={SignUpPage}></Route>
           <ProtectedRoute path={ROUTES.home} component={HomePage} />
           <Route path={ROUTES.posts} component={Posts} />
-          {/* <Route path={ROUTES.table} component={Table} /> */}
           <Route path={ROUTES.profile} component={Profile} />
           <Route path={ROUTES.contact} component={ContactPage} />
+          {/* product-list */}
           <Route path={ROUTES.product} component={Product} />
+          {/* user-list */}
           <Route path={ROUTES.userList} component={UserList} />
+          {/* user-create */}
+          <Route path={ROUTES.userCreate} component={UserCreate} />
 
           <Route path="/" component={LoginPage2} />
         </Switch>

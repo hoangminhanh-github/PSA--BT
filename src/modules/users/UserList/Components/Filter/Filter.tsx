@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 
 import { IProduct, ICategory } from 'models/product'
 import Multi_Select from 'utils/MultiSelect'
-import { setUserSearch_search } from 'modules/UserList/redux/searchReducer'
+import { setUserSearch_search } from 'modules/users/UserList/redux/searchReducer'
 interface country {
   active_currency: null
   code: string
@@ -22,13 +22,13 @@ interface IProps {
   data?: country[]
 }
 const Filter = (props: IProps) => {
-  const filter__input = useRef()
+  const [search, setSearch] = useState<string>()
 
   const dispatch = useDispatch()
   const countries = props.data
 
-  // const handleSearch=()=>{
-  //   dispatch(setUserSearch_search())
+  // const handleSearch = () => {
+  //   search && dispatch(setUserSearch_search(search))
   // }
   console.log(countries)
   return (
@@ -43,6 +43,7 @@ const Filter = (props: IProps) => {
               placeholder="Search the keyword"
               onChange={(e) => {
                 dispatch(setUserSearch_search(e.target.value))
+                // setSearch(e.target.value)
               }}
               // ref={filter__input}
             />

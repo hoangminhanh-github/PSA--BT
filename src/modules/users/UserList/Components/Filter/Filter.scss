@@ -95,17 +95,14 @@
   }
 }
 
-// .select-item .item-renderer {
-//   display: flex;
-//   align-items: center;
-//   width: 100%;
-//   justify-content: space-around;
-// }
-// .select-item .item-renderer span {
-//   color: red;
-//   width: 600px;
-//   text-align: right;
-// }
-// .select-item .item-renderer input {
-//   border: 1px solid pink;
-// }
+// multi-select
+.item-renderer > input {
+  display: none;
+}
+.dropdown-heading {
+  background-color: rgb(27, 27, 56);
+}
+
+.clear-selected-button {
+  margin-top: 13px;
+}

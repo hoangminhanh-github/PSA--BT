@@ -1,0 +1,16 @@
+.user-list {
+  transform: translate(256px, 80px);
+  display: table;
+  width: 100%;
+  flex-direction: column;
+  background-color: #1b1b38;
+}
+.btn-create-user {
+  background: rgb(177, 139, 255);
+  border-radius: 8px;
+  padding: 2px 28px;
+  /* width: 64px; */
+  transform: translateX(21px);
+  height: 43px;
+  margin-bottom: 17px;
+}
