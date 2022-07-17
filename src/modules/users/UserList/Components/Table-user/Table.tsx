@@ -11,10 +11,10 @@ import { Route } from 'react-router'
 import { ROUTES } from 'configs/routes'
 export interface IUser {
   access_level: string
-  created: string
+  created: string | number
   fistName: string
   lastName: string
-  last_login: string
+  last_login: string | number
   order: { order_as_buyer: number; order_as_buyer_total: number }
   product: number
   profile_id: string

@@ -100,7 +100,7 @@ function UserCreate() {
                 onChange={formik.handleChange}
                 value={formik.values.firstName}
               />
-              {formik.errors.firstName && (
+              {formik.errors.firstName && formik.touched.email && (
                 <span className="alert-danger">
                   <FormattedMessage id="nameRequire" />
                 </span>
@@ -108,11 +108,6 @@ function UserCreate() {
             </li>
             <li>
               <span>Last name *</span>
-              {formik.errors.lastName && (
-                <div className="alert-danger">
-                  <FormattedMessage id="nameRequire" />
-                </div>
-              )}
               <input
                 id="lastName"
                 name="lastName"
@@ -120,23 +115,23 @@ function UserCreate() {
                 onChange={formik.handleChange}
                 value={formik.values.lastName}
               />
+              {formik.errors.lastName && formik.touched.lastName && (
+                <div className="alert-danger">
+                  <FormattedMessage id="nameRequire" />
+                </div>
+              )}
             </li>
             <li>
               <span>Email *</span>
-              {formik.errors.email && (
+              <input id="email" name="email" type="text" onChange={formik.handleChange} value={formik.values.email} />
+              {formik.errors.email && formik.touched.email && (
                 <div className="alert-danger">
                   <FormattedMessage id="emailInvalid" />
                 </div>
               )}
-              <input id="email" name="email" type="text" onChange={formik.handleChange} value={formik.values.email} />
             </li>
             <li>
               <span>Password *</span>
-              {formik.errors.password && (
-                <div className="alert-danger">
-                  <FormattedMessage id="password" />
-                </div>
-              )}
               <input
                 id="password"
                 name="password"
@@ -144,14 +139,14 @@ function UserCreate() {
                 onChange={formik.handleChange}
                 value={formik.values.password}
               />
+              {formik.errors.password && formik.touched.password && (
+                <div className="alert-danger">
+                  <FormattedMessage id="password" />
+                </div>
+              )}
             </li>
             <li>
               <span>Confirm password *</span>
-              {formik.errors.confirm_password && (
-                <div className="alert-danger">
-                  <FormattedMessage id="matchPasswordRequire" />
-                </div>
-              )}
               <input
                 id="confirm_password"
                 name="confirm_password"
@@ -159,15 +154,23 @@ function UserCreate() {
                 onChange={formik.handleChange}
                 value={formik.values.confirm_password}
               />
+              {formik.errors.confirm_password && formik.touched.confirm_password && (
+                <div className="alert-danger">
+                  <FormattedMessage id="matchPasswordRequire" />
+                </div>
+              )}
             </li>
             {/* <li>
             <span>Access level *</span>
             <input type="text" />
           </li> */}
           </ul>
-          <button type="submit">submit</button>
+          <button type="submit">Create account</button>
         </form>
       </div>
+      {/* <div className="userCreate__bottom">
+        <button type="submit">submit</button>
+      </div> */}
     </div>
   )
 }

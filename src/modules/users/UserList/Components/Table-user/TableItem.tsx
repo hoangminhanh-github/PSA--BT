@@ -1,14 +1,8 @@
-// import React from 'react'
-
-// const TableItem = (user:IUser) => {
-
-//   return <div>TableItem</div>
-// }
-
-// export default TableItem
 import React from 'react'
 import { IUser } from './Table'
 import { AiOutlineDelete } from 'react-icons/ai'
+import moment from 'moment'
+
 export interface IProps {
   user: IUser
   key: number
@@ -31,8 +25,8 @@ const TableItem = (props: IProps) => {
         <td>{user.product}</td>
         <td>{user.order.order_as_buyer}</td>
         <td>{user.wishlist}</td>
-        <td>{user.created}</td>
-        <td>{user.last_login}</td>
+        <td>{moment(+user.created * 1000).format('MMMM Do YYYY, h:mm:ss a')}</td>
+        <td>{moment(+user.last_login * 1000).format('MMMM Do YYYY, h:mm:ss a')}</td>
         <td>
           <button>
             <AiOutlineDelete />
