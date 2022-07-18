@@ -24,7 +24,9 @@
     ul {
       & > li {
         margin-bottom: 30px;
-        & input {
+        & input,
+        select,
+        option {
           border: none;
           border-radius: 2px;
           height: 36px;

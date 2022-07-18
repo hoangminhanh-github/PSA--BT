@@ -22,6 +22,8 @@ function getBaseUrl(service: APIService) {
 export const API_PATHS = {
   signIn: 'https://api.gearfocus.div4.pgtest.co/api/authentication/login',
   createUser: 'https://api.gearfocus.div4.pgtest.co/apiAdmin/users/create',
+  editUser: 'https://api.gearfocus.div4.pgtest.co/apiAdmin/users/edit',
+  deleteUser: 'https://api.gearfocus.div4.pgtest.co/apiAdmin/users/edit',
   signUp: `${getBaseUrl(APIService.auth)}/register`,
   userProfile: `${getBaseUrl(APIService.public)}/user`,
   getLocation: `${getBaseUrl(APIService.public)}/location`,

@@ -2,6 +2,7 @@ import React from 'react'
 import { IProduct } from 'models/product'
 import { FaPowerOff } from 'react-icons/fa'
 import { AiOutlineDelete } from 'react-icons/ai'
+import moment from 'moment'
 export interface IProps {
   key: number
   product: IProduct
@@ -21,10 +22,10 @@ const TableItem = (props: IProps) => {
           {product.name}
         </td>
         <td>{product.category}</td>
-        <td>{product.price} VND</td>
+        <td>{+product.price / 1} $</td>
         <td>{product.amount}</td>
         <td>{product.vendor}</td>
-        <td>{product.arrivalDate}</td>
+        <td>{moment(+product.arrivalDate * 1000).format('MMMM Do YYYY')}</td>
         <td>
           <button>
             <AiOutlineDelete />

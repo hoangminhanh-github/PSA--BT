@@ -11,6 +11,9 @@ table {
   td {
     // display: flex;
     // align-items: center;
+    & > a {
+      text-decoration: none;
+    }
   }
   .checkbox {
     margin-right: 8px;

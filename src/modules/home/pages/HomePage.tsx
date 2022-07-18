@@ -6,7 +6,7 @@ interface Props {}
 
 const HomePage = (props: Props) => {
   return (
-    <div className="homePage">
+    <div className="homePage" style={{ backgroundColor: 'rgb(27,27,56)', width: '100%', height: '100vh' }}>
       {/* <Navbar></Navbar> */}
       {/* <Category></Category> */}
     </div>

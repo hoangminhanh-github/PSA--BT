@@ -14,15 +14,12 @@ const Table = (props: IProps) => {
   const [itemOffset, setItemOffset] = useState(0)
 
   useEffect(() => {
-    console.log(currentItems)
     const endOffset = itemOffset + PAGE_COUNT
-    console.log(`Loading items from ${itemOffset} to ${endOffset}`)
     setCurrentItems(products.slice(itemOffset, endOffset))
     setPageCount(Math.ceil(products.length / PAGE_COUNT))
   }, [itemOffset, pageCount, products])
   const handlePageClick = (event: any) => {
     const newOffset = (event.selected * PAGE_COUNT) % products.length
-    console.log(`User requested page number ${event.selected}, which is offset ${newOffset}`)
     setItemOffset(newOffset)
   }
   // console.log(currentItems)
