@@ -1,6 +1,6 @@
 .create-product {
   background-color: rgb(27, 27, 56);
-  height: 100vh;
+  height: 190vh;
   color: white;
   transform: translate(256px, 80px);
   padding-left: 32px;
@@ -52,5 +52,19 @@
     border-radius: 3px;
     background-color: #f0ad4e;
     border-color: #eea236;
+  }
+}
+// ulti
+.line {
+  background-color: rgb(50, 50, 89);
+  height: 16px;
+  width: 90%;
+  border-radius: 4px;
+}
+.jodit {
+  width: 50%;
+  button {
+    background-color: rgb(175, 173, 173);
+    // border: 1px solid #000;
   }
 }

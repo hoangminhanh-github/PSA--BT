@@ -2,6 +2,20 @@
 # yarn lockfile v1
 
 
+"@angular/common@>=13":
+  "integrity" "sha512-AynjE7OOEfrdKmS3nu00tkf4g66cx97T6qhfaTvc3hKi45MreBcJkIMcSowF24peygvUN41htMJuq3WQLu92iQ=="
+  "resolved" "https://registry.npmjs.org/@angular/common/-/common-14.0.6.tgz"
+  "version" "14.0.6"
+  dependencies:
+    "tslib" "^2.3.0"
+
+"@angular/core@>=13", "@angular/core@14.0.6":
+  "integrity" "sha512-hyQ3s9Yrm3ejhumgAC9ENhMFmvmPlJkk1tEOjruyoiHwK4EOaDpI+GCNQIBUB1Z3B/QLMlgZeMXrULQztjSQwg=="
+  "resolved" "https://registry.npmjs.org/@angular/core/-/core-14.0.6.tgz"
+  "version" "14.0.6"
+  dependencies:
+    "tslib" "^2.3.0"
+
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   "integrity" "sha512-27d4lZoomVyo51VegxI20xZPuSHusqbQag/ztrBC7wegWoQ1nLREPVSKSW8byhTlzTKyNE4ifaTA6lCp7JjpFw=="
   "resolved" "https://registry.npmjs.org/@babel/code-frame/-/code-frame-7.5.5.tgz"
@@ -1727,6 +1741,13 @@
   "integrity" "sha512-zMM9Ds+SawiUkakS7y94Ymqx+S0ORzpG3frZirN3l+UlXUmSUR7hF4wxCVqW+ei94JzV5kt0uXBcoOEAuiydrw=="
   "resolved" "https://registry.npmjs.org/@juggle/resize-observer/-/resize-observer-3.3.1.tgz"
   "version" "3.3.1"
+
+"@kolkov/angular-editor@^3.0.0-beta.0":
+  "integrity" "sha512-uUa8FW9lFskfL8rans7YRtUQIVK1Qj8bBT9q1MwPXFZ1t+/KfPk62FL5IuMfcnu28UfKl0J2AnGYwbQe4h+Etw=="
+  "resolved" "https://registry.npmjs.org/@kolkov/angular-editor/-/angular-editor-3.0.0-beta.0.tgz"
+  "version" "3.0.0-beta.0"
+  dependencies:
+    "tslib" "^2.3.0"
 
 "@material-ui/core@^3.2.0", "@material-ui/core@3.9.3":
   "integrity" "sha512-REIj62+zEvTgI/C//YL4fZxrCVIySygmpZglsu/Nl5jPqy3CDjZv1F9ubBYorHqmRgeVPh64EghMMWqk4egmfg=="
@@ -3488,6 +3509,11 @@
   "resolved" "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz"
   "version" "2.1.2"
 
+"autobind-decorator@^2.4.0":
+  "integrity" "sha512-OGYhWUO72V6DafbF8PM8rm3EPbfuyMZcJhtm5/n26IDwO18pohE4eNazLoCGhPiXOCD0gEGmrbU3849QvM8bbw=="
+  "resolved" "https://registry.npmjs.org/autobind-decorator/-/autobind-decorator-2.4.0.tgz"
+  "version" "2.4.0"
+
 "autoprefixer@^9.6.1":
   "integrity" "sha512-8T5Y1C5Iyj6PgkPSFd0ODvK9DIleuPKUPYniNxybS47g2k2wFgLZ46lGQHlBuGKIAEV8fbCDfKCCRS1tvOgc3Q=="
   "resolved" "https://registry.npmjs.org/autoprefixer/-/autoprefixer-9.7.3.tgz"
@@ -4802,10 +4828,10 @@
   "resolved" "https://registry.npmjs.org/core-js/-/core-js-2.6.10.tgz"
   "version" "2.6.10"
 
-"core-js@^3.6.5":
-  "integrity" "sha512-WJeQqq6jOYgVgg4NrXKL0KLQhi0CT4ZOCvFL+3CQ5o7I6J8HkT5wd53EadMfqTDp1so/MT1J+w2ujhWcCJtN7w=="
-  "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.18.0.tgz"
-  "version" "3.18.0"
+"core-js@^3.22.8", "core-js@^3.6.5":
+  "integrity" "sha512-7Vh11tujtAZy82da4duVreQysIoO2EvVrur7y6IzZkH1IHPSekuDi8Vuw1+YKjkbfWLRD7Nc9ICQ/sIUDutcyg=="
+  "resolved" "https://registry.npmjs.org/core-js/-/core-js-3.23.5.tgz"
+  "version" "3.23.5"
 
 "core-util-is@~1.0.0", "core-util-is@1.0.2":
   "integrity" "sha1-tf1UIgqivFq1eqtxQMlAdUUDwac="
@@ -6016,10 +6042,10 @@
     "jsx-ast-utils" "^3.1.0"
     "language-tags" "^1.0.5"
 
-"eslint-plugin-react-hooks@^4.0.8", "eslint-plugin-react-hooks@^4.2.0":
-  "integrity" "sha512-623WEiZJqxR7VdxFCKLI6d6LLpwJkGPYKODnkH3D7WpOG5KM8yWueBd8TLsNAetEJNF5iJmolaAKO3F8yzyVBQ=="
-  "resolved" "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.2.0.tgz"
-  "version" "4.2.0"
+"eslint-plugin-react-hooks@^4.0.8", "eslint-plugin-react-hooks@^4.2.0", "eslint-plugin-react-hooks@^4.5.0":
+  "integrity" "sha512-oFc7Itz9Qxh2x4gNHStv3BqJq54ExXmfC+a1NjAta66IAN87Wu0R/QArgIS9qKzX3dXKPI9H5crl9QchNMY9+g=="
+  "resolved" "https://registry.npmjs.org/eslint-plugin-react-hooks/-/eslint-plugin-react-hooks-4.6.0.tgz"
+  "version" "4.6.0"
 
 "eslint-plugin-react@^7.20.3", "eslint-plugin-react@^7.21.5", "eslint-plugin-react@^7.26.0":
   "integrity" "sha512-dceliS5itjk4EZdQYtLMz6GulcsasguIs+VTXuiC7Q5IPIdGTkyfXVdmsQOqEhlD9MciofH4cMcT1bw1WWNxCQ=="
@@ -6105,7 +6131,7 @@
     "normalize-path" "^3.0.0"
     "schema-utils" "^3.0.0"
 
-"eslint@*", "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0", "eslint@^3 || ^4 || ^5 || ^6 || ^7", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0", "eslint@^5 || ^6 || ^7", "eslint@^5.0.0 || ^6.0.0 || ^7.0.0", "eslint@^7.0.0", "eslint@^7.1.0", "eslint@^7.11.0", "eslint@^7.32.0", "eslint@^7.5.0", "eslint@>= 4.12.1", "eslint@>=5":
+"eslint@*", "eslint@^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0", "eslint@^3 || ^4 || ^5 || ^6 || ^7", "eslint@^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0", "eslint@^5 || ^6 || ^7", "eslint@^5.0.0 || ^6.0.0 || ^7.0.0", "eslint@^7.0.0", "eslint@^7.1.0", "eslint@^7.11.0", "eslint@^7.32.0", "eslint@^7.5.0", "eslint@>= 4.12.1", "eslint@>=5":
   "integrity" "sha512-VHZ8gX+EDfz+97jGcgyGCyRia/dPOd6Xh9yPv8Bl1+SoaIwD+a/vlrOmGRUyOYu7MwUhc7CxqeaDZU13S4+EpA=="
   "resolved" "https://registry.npmjs.org/eslint/-/eslint-7.32.0.tgz"
   "version" "7.32.0"
@@ -8640,6 +8666,29 @@
     "@jest/core" "^26.6.0"
     "import-local" "^3.0.2"
     "jest-cli" "^26.6.0"
+
+"jodit-react-ts@^0.9.0":
+  "integrity" "sha512-DBLYcbRYo+zwwgA0Dc9BGsESr3lz1f3mXGsN2g8X1jdiE89PZ1SChH5V+EHSCu+n04rpUWUZTXPrbH0uPj/7zg=="
+  "resolved" "https://registry.npmjs.org/jodit-react-ts/-/jodit-react-ts-0.9.0.tgz"
+  "version" "0.9.0"
+  dependencies:
+    "jodit" "^3.7.2"
+
+"jodit-react@^1.3.11":
+  "integrity" "sha512-gh2Nn7xjq2MPHENA2AJu1Zqbyr5TYxw+ZwpYrnq39sknURXnPmOG/3q3rCM2AVgNMfSQLvILLIvMXmAmPzaj4g=="
+  "resolved" "https://registry.npmjs.org/jodit-react/-/jodit-react-1.3.11.tgz"
+  "version" "1.3.11"
+  dependencies:
+    "eslint-plugin-react-hooks" "^4.5.0"
+    "jodit" "^3.9.4"
+
+"jodit@^3.7.2", "jodit@^3.9.4":
+  "integrity" "sha512-C1d7QooFe2gWZJsnFny7RXFIsohgmUbK+XzXQWC1iqMj8M9+qBB6m7FSijws8UzO/EbarPvTM4phcZKriw+wEQ=="
+  "resolved" "https://registry.npmjs.org/jodit/-/jodit-3.18.9.tgz"
+  "version" "3.18.9"
+  dependencies:
+    "autobind-decorator" "^2.4.0"
+    "core-js" "^3.22.8"
 
 "js-base64@^2.1.8":
   "integrity" "sha512-pZe//GGmwJndub7ZghVHz7vjb2LgC1m8B07Au3eYqeqv9emhESByMXxaEgkUkEqJe87oBbSniGYoQNIBklc7IQ=="
@@ -12023,7 +12072,7 @@
     "strip-ansi" "6.0.0"
     "text-table" "0.2.0"
 
-"react-dom@*", "react-dom@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18", "react-dom@^15.3.0 || ^16.0.0-alpha", "react-dom@^16 || ^17 || ^18", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^17.0.0 || ^18.0.0", "react-dom@^17.0.2", "react-dom@^17.0.2 || ^18.0.0", "react-dom@>=15.0.0", "react-dom@>=16.14.0", "react-dom@>=16.6.0", "react-dom@>=16.8.0":
+"react-dom@*", "react-dom@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18", "react-dom@^15.3.0 || ^16.0.0-alpha", "react-dom@^16 || ^17 || ^18", "react-dom@^16.8.0 || ^17.0.0 || ^18.0.0", "react-dom@^17.0.0 || ^18.0.0", "react-dom@^17.0.2", "react-dom@^17.0.2 || ^18.0.0", "react-dom@>=15.0.0", "react-dom@>=16.14.0", "react-dom@>=16.6.0", "react-dom@>=16.8.0", "react-dom@~0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0":
   "integrity" "sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-17.0.2.tgz"
   "version" "17.0.2"
@@ -12392,7 +12441,7 @@
     "prop-types" "^15.7.2"
     "react-lifecycles-compat" "^3.0.4"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^15.3.0 || ^16.0.0-alpha", "react@^16 || ^17 || ^18", "react@^16.0 || ^17.0.0 || ^18.0.0", "react@^16.3.0 || 17", "react@^16.4.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^16.8.3 || ^17 || ^18", "react@^17.0.0 || ^18.0.0", "react@^17.0.2", "react@^17.0.2 || ^18.0.0", "react@>= 16", "react@>=0.14.0", "react@>=0.14.0 || ^15.6.1 || ^16.0.0", "react@>=15", "react@>=15.0.0", "react@>=16.13.1", "react@>=16.14.0", "react@>=16.6.0", "react@>=16.8.0", "react@0.14.x || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@17.0.2":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16 || ^17 || ^18", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^15.3.0 || ^16.0.0-alpha", "react@^16 || ^17 || ^18", "react@^16.0 || ^17.0.0 || ^18.0.0", "react@^16.3.0 || 17", "react@^16.4.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^16.8.3 || ^17 || ^18", "react@^17.0.0 || ^18.0.0", "react@^17.0.2", "react@^17.0.2 || ^18.0.0", "react@>= 16", "react@>=0.14.0", "react@>=0.14.0 || ^15.6.1 || ^16.0.0", "react@>=15", "react@>=15.0.0", "react@>=16", "react@>=16.13.1", "react@>=16.14.0", "react@>=16.6.0", "react@>=16.8.0", "react@~0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@0.14.x || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -13029,6 +13078,13 @@
   "version" "1.0.3"
   dependencies:
     "aproba" "^1.1.1"
+
+"rxjs@^6.5.3 || ^7.4.0":
+  "integrity" "sha512-dnyv2/YsXhnm461G+R/Pe5bWP41Nm6LBXEYWI6eiFP4fiwx6WRI/CD0zbdVAudd9xwLEF2IDcKXLHit0FYjUzw=="
+  "resolved" "https://registry.npmjs.org/rxjs/-/rxjs-7.5.6.tgz"
+  "version" "7.5.6"
+  dependencies:
+    "tslib" "^2.1.0"
 
 "safe-buffer@^5.0.1", "safe-buffer@^5.1.0", "safe-buffer@^5.1.1", "safe-buffer@^5.1.2", "safe-buffer@>=5.1.0", "safe-buffer@~5.2.0":
   "integrity" "sha512-fZEwUGbVl7kouZs1jCdMLdt95hdIv0ZeHg6L7qPeciMZhZ+/gdesW4wgTARkrFWEpspjEATAzUGPG8N2jJiwbg=="
@@ -14444,7 +14500,7 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
 
-"tslib@^2.0.3", "tslib@^2.1.0":
+"tslib@^2.0.3", "tslib@^2.1.0", "tslib@^2.3.0":
   "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   "version" "2.3.1"
@@ -15482,3 +15538,10 @@
     "nanoclone" "^0.2.1"
     "property-expr" "^2.0.4"
     "toposort" "^2.0.2"
+
+"zone.js@~0.11.4":
+  "integrity" "sha512-umJqFtKyZlPli669gB1gOrRE9hxUUGkZr7mo878z+NEBJZZixJkKeVYfnoLa7g25SseUDc92OZrMKKHySyJrFg=="
+  "resolved" "https://registry.npmjs.org/zone.js/-/zone.js-0.11.6.tgz"
+  "version" "0.11.6"
+  dependencies:
+    "tslib" "^2.3.0"

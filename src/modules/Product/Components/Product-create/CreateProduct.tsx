@@ -5,11 +5,14 @@ import { BsFillArrowLeftCircleFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import { useFormik, Field, FastField, Form } from 'formik'
 import * as Yup from 'yup'
+import moment from 'moment'
 
 import './CreateProduct.scss'
 import { fetchThunk } from 'modules/common/redux/thunk'
 import { API_PATHS } from 'configs/api'
 import { FormattedMessage } from 'react-intl'
+import Multi_Select from 'utils/MultiSelect'
+import Jodit_Editor from 'utils/Jodit_Editor'
 const CreateProduct = () => {
   const formik = useFormik({
     initialValues: {
@@ -65,82 +68,54 @@ const CreateProduct = () => {
         <h4>Add product</h4>
       </div>
       <div className="create-product__email">
-        <h5>Email & password</h5>
         <form action="" onSubmit={formik.handleSubmit}>
           <ul>
             <li>
-              <span>First name *</span>
+              <span>Vendor *</span>
               <input
-                id="firstName"
-                name="firstName"
+                id=""
+                name=""
                 type="text"
+                placeholder="Type Vendor name to select"
                 onChange={formik.handleChange}
-                value={formik.values.firstName}
               />
-              {formik.errors.firstName && formik.touched.email && (
-                <span className="alert-danger">
-                  <FormattedMessage id="nameRequire" />
-                </span>
-              )}
             </li>
             <li>
-              <span>Last name *</span>
-              <input
-                id="lastName"
-                name="lastName"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.lastName}
-              />
-              {formik.errors.lastName && formik.touched.lastName && (
-                <div className="alert-danger">
-                  <FormattedMessage id="nameRequire" />
-                </div>
-              )}
+              <span>Product Title *</span>
+              <input id="" name="" type="text" onChange={formik.handleChange} />
             </li>
             <li>
-              <span>Email *</span>
-              <input id="email" name="email" type="text" onChange={formik.handleChange} value={formik.values.email} />
-              {formik.errors.email && formik.touched.email && (
-                <div className="alert-danger">
-                  <FormattedMessage id="emailInvalid" />
-                </div>
-              )}
+              <span>Brand *</span>
+              <input id="" name="" type="text" onChange={formik.handleChange} />
             </li>
             <li>
-              <span>Password *</span>
-              <input
-                id="password"
-                name="password"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.password}
-              />
-              {formik.errors.password && formik.touched.password && (
-                <div className="alert-danger">
-                  <FormattedMessage id="password" />
-                </div>
-              )}
+              <span>Sku</span>
+              <input id="" name="" type="text" onChange={formik.handleChange} />
             </li>
             <li>
-              <span>Confirm password *</span>
-              <input
-                id="confirm_password"
-                name="confirm_password"
-                type="text"
-                onChange={formik.handleChange}
-                value={formik.values.confirm_password}
-              />
-              {formik.errors.confirm_password && formik.touched.confirm_password && (
-                <div className="alert-danger">
-                  <FormattedMessage id="matchPasswordRequire" />
-                </div>
-              )}
+              <span>Images *</span>
             </li>
-            {/* <li>
-            <span>Access level *</span>
-            <input type="text" />
-          </li> */}
+            <li>
+              <span>Category *</span>
+              <input type="text" />
+            </li>
+            <li>
+              <span>Description *</span>
+              {/* <input type="text" /> */}
+              <Jodit_Editor />
+            </li>
+          </ul>
+          <div className="line"></div>
+          <ul>
+            <h3>Prices & Inventory</h3>
+            <li>
+              <span>Price</span>
+              <input type="text" />
+            </li>
+            <li>
+              <span>Arrival date</span>
+              <input type="text" value={moment().format('L')} onChange={formik.handleChange} />
+            </li>
           </ul>
           <button type="submit">Create account</button>
         </form>
