@@ -51,18 +51,31 @@ const Filter = (props: IProps) => {
                 <li>
                   <input
                     type="checkbox"
-                    name="name"
+                    name="search_in"
                     id=""
-                    onChange={(e) => dispatch(setProductsSearch({ searchIn: e.target.name }))}
+                    value="name"
+                    onChange={(e) => dispatch(setProductsSearch({ searchIn: e.target.value }))}
                   />
                   <span>name</span>
                 </li>
                 <li>
-                  <input type="checkbox" name="SKU" id="" />
+                  <input
+                    type="checkbox"
+                    name="search_in"
+                    value="SKU"
+                    id=""
+                    onChange={(e) => dispatch(setProductsSearch({ searchIn: e.target.value }))}
+                  />
                   <span>SKU</span>
                 </li>
                 <li>
-                  <input type="checkbox" name="full-description" id="" />
+                  <input
+                    type="checkbox"
+                    name="search_in"
+                    value="full-description"
+                    id=""
+                    onChange={(e) => dispatch(setProductsSearch({ searchIn: e.target.value }))}
+                  />
                   <span>Full description</span>
                 </li>
               </ul>
@@ -71,9 +84,9 @@ const Filter = (props: IProps) => {
             <div className="availability">
               <span>Availability</span>
               <select name="" id="" onChange={(e) => dispatch(setProductsSearch({ availability: e.target.value }))}>
-                <option value="all">Any availability select</option>
-                <option value="E">Only enabled</option>
-                <option value="D">Only disable</option>
+                <option value="">Any availability select</option>
+                <option value="1">Only enabled</option>
+                <option value="0">Only disable</option>
               </select>
             </div>
             {/* Vendor */}

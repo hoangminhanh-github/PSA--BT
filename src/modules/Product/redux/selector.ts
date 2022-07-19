@@ -41,33 +41,55 @@ export const productsRemaining = createSelector(
   search_availabilityProducts,
   search_vendorProducts,
   (products, keyword, cate, searchIn, availability, vendor) => {
-    console.log(cate)
+    console.log(keyword)
     return products.filter((product, index) => {
       const valuesOfProducts = Object.values(product)
-      if (keyword && valuesOfProducts.includes(keyword)) {
-        if (cate == product.category) {
-          if (vendor == product.vendor) {
-            return product
-          }
-          if (!vendor) {
-            return product
-          }
-        }
-
-        if (!cate) {
-          return product
+      const rule_keyword = (param?: string) => {
+        if (param) {
+          return valuesOfProducts.includes(keyword)
+        } else {
+          return true
         }
       }
-      if (!keyword) {
-        return products
+      const rule_cate = (param?: string) => {
+        if (param) {
+          return cate == product.category
+        } else {
+          return true
+        }
       }
-      // if (valuesOfProducts.includes(keyword) && cate == product.category && vendor == product.vendor) {
-      //   console.log(123)
-      //   return product
-      // }
-      //  else {
-      //   return products
-      // }
+      const rule_vendor = (param?: string) => {
+        if (param) {
+          return vendor == product.vendor
+        } else {
+          return true
+        }
+      }
+      const rule_searchIn = (param?: string) => {
+        if (param == 'name') {
+          return searchIn == product.name
+        }
+        if (param == 'SKU') {
+          return searchIn == product.sku
+        } else {
+          return true
+        }
+      }
+      const rule_availability = (param?: string) => {
+        if (param) {
+          return availability == product.amount
+        } else {
+          return true
+        }
+      }
+      if (searchIn && rule_searchIn(searchIn)) {
+        return product
+        // }
+      }
+      if (rule_keyword(keyword) && rule_cate(cate) && rule_vendor(vendor) && rule_availability(availability)) {
+        return product
+        // }
+      }
     })
   },
 )

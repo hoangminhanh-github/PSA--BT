@@ -81,20 +81,22 @@ const Table = (props: IProps) => {
           ))}
         </tbody>
       </table>
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel=">>"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={PAGE_COUNT}
-        pageCount={pageCount}
-        previousLabel="<<"
-        // renderOnZeroPageCount={null}
-        containerClassName="pagination"
-        pageLinkClassName="page-num"
-        previousLinkClassName="page-num"
-        nextLinkClassName="page-num"
-        activeClassName="active"
-      ></ReactPaginate>
+      {currentItems.length >= PAGE_COUNT && (
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel=">>"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={PAGE_COUNT}
+          pageCount={pageCount}
+          previousLabel="<<"
+          // renderOnZeroPageCount={null}
+          containerClassName="pagination"
+          pageLinkClassName="page-num"
+          previousLinkClassName="page-num"
+          nextLinkClassName="page-num"
+          activeClassName="active"
+        ></ReactPaginate>
+      )}
     </>
   )
 }

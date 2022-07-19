@@ -19,6 +19,7 @@ const Product = lazy(() => import('./modules/Product/Product'))
 const UserList = lazy(() => import('./modules/users/UserList/UserList'))
 const UserCreate = lazy(() => import('./modules/users/UserCreate/UserCreate'))
 const userEdit = lazy(() => import('./modules/users/UserList/Components/User-edit/UserEdit'))
+const CreateProduct = lazy(() => import('./modules/Product/Components/Product-create/CreateProduct'))
 
 interface Props {}
 
@@ -47,7 +48,10 @@ export const Routes = (props: Props) => {
           <Route path={ROUTES.userList} component={UserList} />
           {/* user-create */}
           <Route path={ROUTES.userCreate} component={UserCreate} />
+
           <Route path={ROUTES.userEdit} component={userEdit} />
+
+          <Route path={ROUTES.productCreate} component={CreateProduct} />
 
           <Route path="/" component={LoginPage2} />
         </Switch>

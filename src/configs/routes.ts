@@ -10,4 +10,5 @@ export const ROUTES = {
   userList: '/user-list',
   userCreate: '/user-create',
   userEdit: '/user-details:slug',
+  productCreate: '/product-create',
 }
