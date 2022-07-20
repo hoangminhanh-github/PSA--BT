@@ -6,6 +6,7 @@ import { setUserSearch_types } from 'modules/users/UserList/redux/searchReducer'
 
 interface IProps {
   options: any
+  selected?: any
 }
 
 export interface IGifo {
@@ -20,7 +21,7 @@ const Multi_Select = (props: IProps) => {
   const dispatch = useDispatch()
   const values: IGifo[] = props.options
   const newValues = values.map((value2: IGifo, index) => {
-    return { label: value2.name, value: value2.name }
+    return { label: value2.name, value: value2.id }
   })
   const [selected, setSelected] = useState([])
 
@@ -29,11 +30,15 @@ const Multi_Select = (props: IProps) => {
       return value.value
     })
   }, [selected])
+  const prevValues = props.selected?.map((a: any) => {
+    return { label: a.name, value: a.category_id }
+  })
+  console.log(selected)
   return (
     <MultiSelect
       className="multi-select"
       options={newValues}
-      value={selected}
+      value={prevValues ? selected.concat(prevValues) : selected}
       onChange={setSelected}
       labelledBy="Select"
     ></MultiSelect>

@@ -3,11 +3,14 @@ import { IProduct } from 'models/product'
 import { FaPowerOff } from 'react-icons/fa'
 import { AiOutlineDelete } from 'react-icons/ai'
 import moment from 'moment'
+import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 export interface IProps {
   key: number
   product: IProduct
 }
 const TableItem = (props: IProps) => {
+  const dispatch = useDispatch()
   const product = props.product
   const key = props.key
   return (
@@ -19,7 +22,7 @@ const TableItem = (props: IProps) => {
         </th>
         <td>{product.sku}</td>
         <td title={product.name} className="hehe">
-          {product.name}
+          <Link to={`/product-details:${product.id}`}>{product.name}</Link>
         </td>
         <td>{product.category}</td>
         <td>{+product.price / 1} $</td>

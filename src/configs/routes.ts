@@ -11,4 +11,5 @@ export const ROUTES = {
   userCreate: '/user-create',
   userEdit: '/user-details:slug',
   productCreate: '/product-create',
+  productEdit: '/product-details:slug',
 }

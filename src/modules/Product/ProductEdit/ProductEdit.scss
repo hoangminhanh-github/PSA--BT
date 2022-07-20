@@ -1,0 +1,80 @@
+.create-product {
+  background-color: rgb(27, 27, 56);
+  height: 190vh;
+  color: white;
+  transform: translate(256px, 80px);
+  padding-left: 32px;
+
+  &__heading {
+    padding-top: 16px;
+
+    &-icon {
+      font-size: 28px;
+      color: white;
+      margin-bottom: 16px;
+    }
+    h4 {
+      font-weight: 700;
+    }
+    h5 {
+      margin-top: 10px;
+    }
+  }
+  &__email {
+    ul {
+      & > li {
+        margin-bottom: 30px;
+        & input,
+        select,
+        option {
+          border: none;
+          border-radius: 2px;
+          height: 36px;
+          min-width: 280px;
+          margin-right: 16px;
+        }
+      }
+      list-style: none;
+      & > li > span {
+        display: inline-block;
+        width: 120px;
+        font-weight: 100;
+      }
+    }
+    .alert-danger {
+      display: contents;
+    }
+  }
+  & > button {
+    min-width: 150px;
+    min-height: 35px;
+    color: #fff;
+    border-radius: 3px;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+  }
+}
+.jodit {
+  width: 50%;
+  button {
+    background-color: rgb(175, 173, 173);
+    // border: 1px solid #000;
+  }
+}
+// multi-select
+.multi-select {
+  // color: black;
+  // color: white;
+  width: 300px;
+}
+.item-renderer > input {
+  display: none;
+}
+.dropdown-heading {
+  background-color: rgb(27, 27, 56);
+  // background-color: white;
+}
+
+.clear-selected-button {
+  margin-top: 13px;
+}
