@@ -5,15 +5,7 @@ import { useDispatch } from 'react-redux'
 import { setUserSearch_types } from 'modules/users/UserList/redux/searchReducer'
 
 interface IProps {
-  options: any
-}
-
-export interface IGifo {
-  id: string
-  name: string
-  parentId: string
-  path: string
-  pos: string
+  options: object[]
 }
 
 const Multi_Select = (props: IProps) => {
@@ -26,12 +18,6 @@ const Multi_Select = (props: IProps) => {
     { label: 'View order reports', value: 'View order reports' },
     { label: 'Volume discounts management', value: 'Volume discounts management' },
   ]
-
-  const values: IGifo[] = props.options
-  const newValues = values.map((value2: IGifo, index) => {
-    return { label: value2.name, value: value2.name }
-  })
-  console.log(newValues)
   const [selected, setSelected] = useState([])
   // // selected && dispatch(setUserSearch_types(selected))
   // const handleChange=()=>{
@@ -54,15 +40,7 @@ const Multi_Select = (props: IProps) => {
     })
     dispatch(setUserSearch_types(typeArr))
   }, [selected])
-  return (
-    <MultiSelect
-      className="multi-select"
-      options={newValues}
-      value={selected}
-      onChange={setSelected}
-      labelledBy="Select"
-    ></MultiSelect>
-  )
+  return <MultiSelect options={options} value={selected} onChange={setSelected} labelledBy="Select"></MultiSelect>
 }
 
 export default Multi_Select

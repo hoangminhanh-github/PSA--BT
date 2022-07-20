@@ -45,7 +45,7 @@
       display: contents;
     }
   }
-  button {
+  & > button {
     min-width: 150px;
     min-height: 35px;
     color: #fff;
@@ -67,4 +67,21 @@
     background-color: rgb(175, 173, 173);
     // border: 1px solid #000;
   }
+}
+// multi-select
+.multi-select {
+  // color: black;
+  // color: white;
+  width: 300px;
+}
+.item-renderer > input {
+  display: none;
+}
+.dropdown-heading {
+  background-color: rgb(27, 27, 56);
+  // background-color: white;
+}
+
+.clear-selected-button {
+  margin-top: 13px;
 }

@@ -24,6 +24,7 @@ export const API_PATHS = {
   createUser: 'https://api.gearfocus.div4.pgtest.co/apiAdmin/users/create',
   editUser: 'https://api.gearfocus.div4.pgtest.co/apiAdmin/users/edit',
   deleteUser: 'https://api.gearfocus.div4.pgtest.co/apiAdmin/users/edit',
+  getBrand: 'https://api.gearfocus.div4.pgtest.co/apiAdmin/brands/list',
   signUp: `${getBaseUrl(APIService.auth)}/register`,
   userProfile: `${getBaseUrl(APIService.public)}/user`,
   getLocation: `${getBaseUrl(APIService.public)}/location`,

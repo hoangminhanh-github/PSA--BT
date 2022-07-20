@@ -32,6 +32,17 @@ export const search_vendorProducts = (state: AppState) => {
     return state.products.search.vendor
   }
 }
+export const brandsSelector = (state: AppState) => {
+  if (state.brands.brands) {
+    return state.brands.brands
+  }
+}
+
+export const categorySelector = (state: AppState) => {
+  if (state.brands.category) {
+    return state.brands.category
+  }
+}
 
 export const productsRemaining = createSelector(
   productsSelector,

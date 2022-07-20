@@ -1,6 +1,7 @@
 import { ActionType, createCustomAction, getType } from 'typesafe-actions'
 // import { IUser } from 'modules/users/UserList/Components/Table-user/Table'
 import { IProduct } from 'models/product'
+import { AppState } from 'redux/reducer'
 export interface IProductListState {
   products: IProduct[]
   search: { keyword?: string; category?: string; searchIn?: string; availability?: string; vendor?: string }
@@ -30,6 +31,7 @@ export default function reducer(
       return { products: action.data }
     case getType(setProductsSearch):
       return { ...state, search: { ...state.search, ...action.data } }
+
     default:
       return state
   }

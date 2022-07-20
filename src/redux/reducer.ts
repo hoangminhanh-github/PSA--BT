@@ -7,6 +7,8 @@ import PostReducer, { PostState } from 'modules/Post/redux/PostReducer'
 import userListReducer, { IUserListState } from 'modules/users/UserList/redux/userListReducer'
 import searchReducer, { ISearch } from 'modules/users/UserList/redux/searchReducer'
 import productReducer, { IProductListState } from 'modules/Product/redux/productReducer'
+import brandsReducer, { IBrandState } from 'modules/Product/redux/brandsReducer'
+
 export interface AppState {
   router: RouterState
   intl: IntlState
@@ -15,6 +17,7 @@ export interface AppState {
   userList: IUserListState
   userSearch: ISearch
   products: IProductListState
+  brands: IBrandState
 }
 
 export default function createRootReducer(history: History) {
@@ -26,5 +29,6 @@ export default function createRootReducer(history: History) {
     userList: userListReducer,
     userSearch: searchReducer,
     products: productReducer,
+    brands: brandsReducer,
   })
 }

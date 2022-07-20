@@ -6,7 +6,8 @@ import DateRangePicker from 'rsuite/DateRangePicker'
 import { useDispatch } from 'react-redux'
 
 import { IProduct, ICategory } from 'models/product'
-import Multi_Select from 'utils/MultiSelect'
+// import Multi_Select from 'utils/MultiSelect'
+import Multi_Select from '../../unti/muitiSelect'
 import { setUserSearch_search } from 'modules/users/UserList/redux/searchReducer'
 interface country {
   active_currency: null
