@@ -1,3 +1,11 @@
+button {
+  position: relative;
+  font-size: 24px;
+  color: white;
+  // padding: 2px;
+  border-radius: 4px;
+  background-color: #b18bff;
+}
 table {
   margin-left: 16px;
 
@@ -71,4 +79,14 @@ table {
 }
 .active {
   background-color: #b18bff;
+}
+.btn-create-product {
+  background: rgb(177, 139, 255);
+  border-radius: 8px;
+  padding: 2px 20px;
+  /* width: 64px; */
+  transform: translateX(21px);
+  height: 43px;
+  margin-bottom: 17px;
+  font-size: 16px;
 }

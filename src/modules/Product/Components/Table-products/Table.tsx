@@ -32,6 +32,7 @@ const Table = (props: IProps) => {
   return (
     <>
       <button
+        className="btn-create-product"
         onClick={() => {
           dispatch(replace(ROUTES.productCreate))
         }}

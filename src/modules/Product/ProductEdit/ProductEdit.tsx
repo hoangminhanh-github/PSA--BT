@@ -11,6 +11,10 @@ import { IDetailsProduct } from 'models/Products/ProductDetails'
 import { brandsSelector, categorySelector } from '../redux/selector'
 import Multi_Select from '../unti/multiSelect'
 import Jodit_Editor from 'utils/Jodit_Editor'
+import { IoIosCloseCircleOutline } from 'react-icons/io'
+import { useFormik, Field, FastField, Form } from 'formik'
+import * as Yup from 'yup'
+import { initialValues } from '../unti/initialValues'
 const ProductEdit = () => {
   const params: { slug: string | undefined } = useParams()
   const slug = params.slug?.split(':')[1]
@@ -28,6 +32,42 @@ const ProductEdit = () => {
     getProductDetails()
   }, [])
   console.log(details)
+
+  const formik = useFormik({
+    initialValues: initialValues,
+    // validationSchema: Yup.object({
+    //   firstName: Yup.string().required('').min(4, 'Must be 4 characters or more'),
+    //   lastName: Yup.string().required('').min(4, 'Must be 4 characters or more'),
+    //   email: Yup.string()
+    //     .required('Required')
+    //     .matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, 'Please enter a valid email address'),
+    //   password: Yup.string().required('Required').min(6, 'Must be 6 characters or more'),
+    //   confirm_password: Yup.string()
+    //     .required('Required')
+    //     .oneOf([Yup.ref('password'), null], 'Password must match'),
+    // }),
+    // hàm submit mặc định của formilk         (sửa)
+    onSubmit: (values) => {
+      console.log(formik.values)
+      register(formik.values)
+    },
+  })
+  const register = React.useCallback(
+    async (values) => {
+      const json = await dispatch(fetchThunk(API_PATHS.createProduct, 'post', { productDetail: values }))
+      console.log(json)
+      // if (json?.success === true) {
+      //   console.log(json.data)
+      //   alert('Chúc mừng bạn đã đăng kí thành công')
+      //   dispatch(replace(ROUTES.userList))
+      //   return
+      // } else {
+      //   alert('haizz')
+      // }
+    },
+    [dispatch],
+  )
+
   return (
     <div className="create-product">
       <div className="create-product__heading">
@@ -37,10 +77,7 @@ const ProductEdit = () => {
         <h4>Add product</h4>
       </div>
       <div className="create-product__email">
-        <form
-          action=""
-          // onSubmit={formik.handleSubmit}
-        >
+        <form action="" onSubmit={formik.handleSubmit}>
           <ul>
             <li>
               <span>Vendor *</span>
@@ -49,23 +86,17 @@ const ProductEdit = () => {
                 name=""
                 type="text"
                 placeholder="Type Vendor name to select"
-                // onChange={formik.handleChange}
+                onChange={formik.handleChange}
               />
             </li>
             <li>
               <span>Product Title *</span>
-              <input
-                id=""
-                name=""
-                type="text"
-                value={details?.name}
-                // onChange={formik.handleChange}
-              />
+              <input id="" name="" type="text" value={details?.name} onChange={formik.handleChange} />
             </li>
             <li>
               <span>Brand *</span>
               {/* <input id="" name="" type="text" onChange={formik.handleChange} /> */}
-              <select name="" id="">
+              <select name="" id="" onChange={formik.handleChange}>
                 <option value="" disabled selected hidden>
                   Type brand name to select
                 </option>
@@ -84,7 +115,12 @@ const ProductEdit = () => {
               <span>Images *</span>
               {/* <input type="file" multiple id="input" /> */}
               {details?.images.map((image: any, index: any) => (
-                <img style={{ width: '124px', height: '124px' }} key={index} src={image.file} alt="" />
+                <>
+                  <img style={{ width: '124px', height: '124px' }} key={index} src={image.file} alt="" />
+                  <span className="img-icons">
+                    <IoIosCloseCircleOutline></IoIosCloseCircleOutline>
+                  </span>
+                </>
               ))}
               <div
                 className="hehe"
@@ -107,7 +143,7 @@ const ProductEdit = () => {
             <h3>Prices & Inventory</h3>
             <li>
               <span>Price</span>
-              <input type="text" value={details?.price} />
+              <input type="text" value={details?.price} onChange={formik.handleChange} />
             </li>
             <li>
               <span>Arrival date</span>
@@ -126,12 +162,9 @@ const ProductEdit = () => {
               <input type="text" value={'22.00'} />
             </li>
           </ul>
-          {/* <button type="submit">Create account</button> */}
+          <button type="submit">update product</button>
         </form>
       </div>
-      {/* <div className="create-product__bottom">
-          <button type="submit">submit</button>
-        </div> */}
     </div>
   )
 }

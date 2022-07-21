@@ -38,9 +38,8 @@ export const Routes = (props: Props) => {
           </>
         )}
         <Switch location={location}>
-          <Route path={ROUTES.login} component={LoginPage2} />
-          <Route path={ROUTES.signUp} component={SignUpPage}></Route>
           <ProtectedRoute path={ROUTES.home} component={HomePage} />
+          <Route path={ROUTES.signUp} component={SignUpPage}></Route>
           <Route path={ROUTES.posts} component={Posts} />
           <Route path={ROUTES.profile} component={Profile} />
           <Route path={ROUTES.contact} component={ContactPage} />
@@ -53,7 +52,8 @@ export const Routes = (props: Props) => {
           <Route path={ROUTES.userEdit} component={userEdit} />
           <Route path={ROUTES.productCreate} component={CreateProduct} />
           <Route path={ROUTES.productEdit} component={ProductEdit} />
-          <Route path="/" component={LoginPage2} />
+          {/* <Route path={ROUTES.login} component={LoginPage2} /> */}
+          {!auth && <Route path="/" component={LoginPage2} />}
         </Switch>
       </Suspense>
     </>

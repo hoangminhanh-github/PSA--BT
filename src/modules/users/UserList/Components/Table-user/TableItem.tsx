@@ -19,10 +19,20 @@ const TableItem = (props: IProps) => {
   const key = props.key
 
   const handleDeleteUser = async () => {
-    const json: any = await dispatch(
-      fetchThunk(API_PATHS.editUser, 'post', { params: [{ id: user.profile_id, delete: 1 }] }),
-    )
-    console.log(json)
+    if (window.confirm('Are you Sure?')) {
+      try {
+        const json: any = await dispatch(
+          fetchThunk(API_PATHS.productDelete, 'post', { params: [{ id: user.profile_id, delete: 1 }] }),
+        )
+        if (json.success) {
+          await alert('xóa thật rồi')
+        }
+      } catch {
+        alert('không thể xóa')
+      }
+    } else {
+      alert('đã lựa chọn không xóa')
+    }
   }
 
   // useEffect(() => {
