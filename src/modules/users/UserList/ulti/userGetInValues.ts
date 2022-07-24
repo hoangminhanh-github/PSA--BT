@@ -1,0 +1,17 @@
+export const userGetInValues = {
+  page: 1,
+  count: 20,
+  search: '',
+  memberships: [],
+  types: [],
+  status: [],
+  country: '',
+  state: '',
+  address: '',
+  phone: '',
+  date_type: 'R',
+  date_range: [],
+  sort: 'last_login',
+  order_by: 'DESC',
+  tz: 7,
+}

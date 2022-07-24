@@ -4,6 +4,9 @@ import { ISearch } from './searchReducer'
 
 import { IUser } from 'modules/users/UserList/Components/Table-user/Table'
 
+export const UserSearchSelector = (state: ISearch) => {
+  return state.userSearch
+}
 export const search_searchSelector = (state: ISearch) => {
   return state.userSearch.userSearch
 }
@@ -14,6 +17,10 @@ export const search_typeTextSelector = (state: ISearch) => {
 
 export const userListSelector = (state: AppState['userList']) => {
   return state.userList
+}
+
+export const rolesAdminSelector = (state: AppState) => {
+  return state.roles.administrator
 }
 
 export const userRemaining = createSelector(

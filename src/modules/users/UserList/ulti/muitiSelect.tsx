@@ -11,12 +11,12 @@ interface IProps {
 const Multi_Select = (props: IProps) => {
   const dispatch = useDispatch()
   const options = [
-    { label: 'Administrator', value: 'Administrator' },
-    { label: 'Content management', value: 'Content management' },
-    { label: 'Coupons management', value: 'Coupons management' },
-    { label: 'Vendor', value: 'Vendor' },
-    { label: 'View order reports', value: 'View order reports' },
-    { label: 'Volume discounts management', value: 'Volume discounts management' },
+    { label: 'Administrator', value: '1' },
+    { label: 'Content management', value: '3' },
+    { label: 'Coupons management', value: '2' },
+    { label: 'Vendor', value: '5' },
+    { label: 'View order reports', value: '6' },
+    { label: 'Volume discounts management', value: '4' },
   ]
   const [selected, setSelected] = useState([])
   // // selected && dispatch(setUserSearch_types(selected))

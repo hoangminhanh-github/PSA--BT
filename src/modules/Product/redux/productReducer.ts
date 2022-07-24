@@ -4,7 +4,14 @@ import { IProduct } from 'models/product'
 import { AppState } from 'redux/reducer'
 export interface IProductListState {
   products: IProduct[]
-  search: { keyword?: string; category?: string; searchIn?: string; availability?: string; vendor?: string }
+  search: {
+    keyword?: string
+    category?: string
+    searchIn?: string
+    availability?: string
+    vendor?: string
+    stock?: string
+  }
 }
 
 export const setProducts = createCustomAction('products/setProducts', (data?: IProductListState) => ({
@@ -22,7 +29,7 @@ type Action = ActionType<typeof actions>
 export default function reducer(
   state: IProductListState = {
     products: [],
-    search: { keyword: '', category: '', searchIn: '', availability: '', vendor: '' },
+    search: { keyword: '', category: '', searchIn: '', availability: '', vendor: '', stock: '' },
   },
   action: Action,
 ) {

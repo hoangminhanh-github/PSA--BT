@@ -32,6 +32,11 @@ export const search_vendorProducts = (state: AppState) => {
     return state.products.search.vendor
   }
 }
+export const search_stockProducts = (state: AppState) => {
+  if (state.products.search) {
+    return state.products.search.stock
+  }
+}
 export const brandsSelector = (state: AppState) => {
   if (state.brands.brands) {
     return state.brands.brands

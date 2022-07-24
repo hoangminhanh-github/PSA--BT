@@ -1,11 +1,11 @@
 /* eslint-disable */
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import { useFormik, Field, FastField, Form } from 'formik'
 import { FormattedMessage } from 'react-intl'
 import * as Yup from 'yup'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { ThunkDispatch } from 'redux-thunk'
 
 import { fetchThunk } from 'modules/common/redux/thunk'
@@ -17,7 +17,9 @@ import { RESPONSE_STATUS_SUCCESS } from 'utils/httpResponseCode'
 import { replace } from 'connected-react-router'
 import { ROUTES } from 'configs/routes'
 import { Routes } from 'Routes'
-
+import { rolesAdminSelector } from '../UserList/redux/selector'
+rolesAdminSelector
+// test
 export interface IFormUser {
   email: string
   firstName: string
@@ -29,10 +31,12 @@ export interface IFormUser {
   taxExempt: 0
   paymentRailsType: string
   access_level: string
+  role?: []
 }
 function UserCreate() {
   const dispatch = useDispatch<ThunkDispatch<AppState, null, Action<string>>>()
-
+  const adminRoles = useSelector(rolesAdminSelector)
+  const [roles, setRoles] = useState<string>()
   const [formValue, setFormValue] = useState<IFormUser>()
   const formik = useFormik({
     initialValues: {
@@ -46,6 +50,7 @@ function UserCreate() {
       taxExempt: 0,
       paymentRailsType: 'individual',
       access_level: '10',
+      roles: [],
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required('').min(4, 'Must be 4 characters or more'),
@@ -79,6 +84,12 @@ function UserCreate() {
     },
     [dispatch],
   )
+
+  const [isActive, setActive] = useState(true)
+  const handleButtonClicked = useCallback(() => {
+    setActive((value) => !value)
+  }, [])
+
   return (
     <div className="userCreate">
       <div className="userCreate__heading">
@@ -135,7 +146,7 @@ function UserCreate() {
               <input
                 id="password"
                 name="password"
-                type="text"
+                type="password"
                 onChange={formik.handleChange}
                 value={formik.values.password}
               />
@@ -150,7 +161,7 @@ function UserCreate() {
               <input
                 id="confirm_password"
                 name="confirm_password"
-                type="text"
+                type="password"
                 onChange={formik.handleChange}
                 value={formik.values.confirm_password}
               />
@@ -160,10 +171,40 @@ function UserCreate() {
                 </div>
               )}
             </li>
-            {/* <li>
-            <span>Access level *</span>
-            <input type="text" />
-          </li> */}
+            <div className="line"></div>
+            <li>
+              <span>Access level *</span>
+              {/* <input type="text" /> */}
+              <select
+                name="access_level"
+                id=""
+                onChange={(e) => {
+                  setRoles(e.target.value)
+                  formik.handleChange
+                }}
+              >
+                <option value="10">Vendor</option>
+                <option value="100">Admin</option>
+              </select>
+            </li>
+            {roles == '100' && (
+              <li>
+                <span>Roles *</span>
+                {/* <input type="text" /> */}
+                <select name="roles" id="" onChange={formik.handleChange}>
+                  {adminRoles?.map((role) => (
+                    <option value={role.id}>{role.name}</option>
+                  ))}
+                </select>
+              </li>
+            )}
+            <li>
+              <span>MemberShip</span>
+              <select name="membership_id" id="" onChange={formik.handleChange}>
+                <option value="">Ignore Membership</option>
+                <option value="">General</option>
+              </select>
+            </li>
           </ul>
           <button type="submit">Create account</button>
         </form>
@@ -171,6 +212,7 @@ function UserCreate() {
       {/* <div className="userCreate__bottom">
         <button type="submit">submit</button>
       </div> */}
+      {/* tesst */}
     </div>
   )
 }

@@ -8,10 +8,12 @@ import { setProductsSearch } from 'modules/Product/redux/productReducer'
 
 export interface IProps {
   data: ICategory[]
+  handleSearch: () => void
 }
 const Filter = (props: IProps) => {
   const dispatch = useDispatch()
   const category = props.data
+  const handleSearch = props.handleSearch
 
   return (
     <div className="filter">
@@ -27,21 +29,21 @@ const Filter = (props: IProps) => {
             <select name="" id="" onChange={(e) => dispatch(setProductsSearch({ category: e.target.value }))}>
               <option value="">any category</option>
               {category.map((cate, index) => (
-                <option key={index} value={cate.name}>
+                <option key={index} value={cate.id}>
                   {cate.name}
                 </option>
               ))}
             </select>
             {/*  */}
-            <select name="" id="">
-              <option style={{ lineHeight: '40px' }} value="">
+            <select name="" id="" onChange={(e) => dispatch(setProductsSearch({ stock: e.target.value }))}>
+              <option style={{ lineHeight: '40px' }} value="all">
                 Any stock status
               </option>
-              <option value="">In stock</option>
-              <option value="">Low stock</option>
-              <option value="">Sold</option>
+              <option value="in">In stock</option>
+              <option value="low">Low stock</option>
+              <option value="out">Sold</option>
             </select>
-            <button>Search</button>
+            <button onClick={handleSearch}>Search</button>
           </summary>
           {/* bottom */}
           <div className="filter-main-bot">
@@ -84,7 +86,7 @@ const Filter = (props: IProps) => {
             <div className="availability">
               <span>Availability</span>
               <select name="" id="" onChange={(e) => dispatch(setProductsSearch({ availability: e.target.value }))}>
-                <option value="">Any availability select</option>
+                <option value="all">Any availability select</option>
                 <option value="1">Only enabled</option>
                 <option value="0">Only disable</option>
               </select>

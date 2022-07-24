@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { SetStateAction, useEffect, useState } from 'react'
 import { AiOutlineDelete } from 'react-icons/ai'
 import ReactPaginate from 'react-paginate'
 import { replace } from 'connected-react-router'
@@ -9,6 +9,11 @@ import './Table.scss'
 import { useDispatch } from 'react-redux'
 import { Route } from 'react-router'
 import { ROUTES } from 'configs/routes'
+
+// test
+import Pagination from '@mui/material/Pagination'
+import Stack from '@mui/material/Stack'
+
 export interface IUser {
   access_level: string
   created: string | number
@@ -26,28 +31,19 @@ export interface IUser {
 
 interface IProps {
   data: IUser[]
+  setPageCurrent: React.Dispatch<React.SetStateAction<number>>
+  pageCurrent: number | undefined
+  totalPage: number | undefined
 }
 
 const Table = (props: IProps) => {
+  const setPageCurrent = props.setPageCurrent
+  const totalPage = props.totalPage
   const dispatch = useDispatch()
-  const PAGE_COUNT = 10
-  const userList = props.data
 
-  const [currentItems, setCurrentItems] = useState<IUser[]>(userList.slice(0, PAGE_COUNT))
-  const [pageCount, setPageCount] = useState(0)
-  const [itemOffset, setItemOffset] = useState(0)
-
-  useEffect(() => {
-    console.log(currentItems)
-    const endOffset = itemOffset + PAGE_COUNT
-    setCurrentItems(userList.slice(itemOffset, endOffset))
-    setPageCount(Math.ceil(userList.length / PAGE_COUNT))
-  }, [itemOffset, pageCount, userList])
-  const handlePageClick = (event: any) => {
-    const newOffset = (event.selected * PAGE_COUNT) % userList.length
-    setItemOffset(newOffset)
+  const currentPage = (value: any) => {
+    setPageCurrent(value)
   }
-
   return (
     <>
       <button className="btn-create-user" onClick={() => dispatch(replace(ROUTES.userCreate))}>
@@ -74,29 +70,24 @@ const Table = (props: IProps) => {
           </tr>
         </thead>
         <tbody>
-          {currentItems?.map((user: IUser, index: number) => (
+          {props.data?.map((user: IUser, index: number) => (
             <>
               <TableItem key={index} user={user}></TableItem>
             </>
           ))}
         </tbody>
       </table>
-      {currentItems.length >= PAGE_COUNT && (
-        <ReactPaginate
-          breakLabel="..."
-          nextLabel=">>"
-          onPageChange={handlePageClick}
-          pageRangeDisplayed={PAGE_COUNT}
-          pageCount={pageCount}
-          previousLabel="<<"
-          // renderOnZeroPageCount={null}
-          containerClassName="pagination"
-          pageLinkClassName="page-num"
-          previousLinkClassName="page-num"
-          nextLinkClassName="page-num"
-          activeClassName="active"
-        ></ReactPaginate>
-      )}
+
+      <Stack spacing={2} className="pagination">
+        <Pagination
+          color="secondary"
+          count={totalPage}
+          defaultPage={1}
+          onChange={(e, page) => {
+            currentPage(page)
+          }}
+        />
+      </Stack>
     </>
   )
 }

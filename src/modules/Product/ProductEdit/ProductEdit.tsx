@@ -9,12 +9,12 @@ import { Link, useParams } from 'react-router-dom'
 import './ProductEdit.scss'
 import { IDetailsProduct } from 'models/Products/ProductDetails'
 import { brandsSelector, categorySelector } from '../redux/selector'
-import Multi_Select from '../unti/multiSelect'
+import Multi_Select from '../ulti/multiSelect'
 import Jodit_Editor from 'utils/Jodit_Editor'
 import { IoIosCloseCircleOutline } from 'react-icons/io'
 import { useFormik, Field, FastField, Form } from 'formik'
 import * as Yup from 'yup'
-import { initialValues } from '../unti/initialValues'
+import { initialValues } from '../ulti/initialValues'
 const ProductEdit = () => {
   const params: { slug: string | undefined } = useParams()
   const slug = params.slug?.split(':')[1]

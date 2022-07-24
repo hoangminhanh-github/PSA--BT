@@ -75,3 +75,17 @@ table {
 .active {
   background-color: #b18bff;
 }
+.pagination {
+  justify-content: center;
+  align-items: flex-start;
+  button {
+    border-radius: 2px;
+    background-color: #b18bff;
+  }
+  li {
+    margin-right: 6px;
+  }
+  .Mui-selected {
+    background-color: red;
+  }
+}

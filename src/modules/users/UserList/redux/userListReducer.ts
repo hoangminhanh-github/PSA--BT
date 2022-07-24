@@ -4,7 +4,11 @@ export interface IUserListState {
   userList?: IUser[]
 }
 
-export const setUserListRD = createCustomAction('auth/setUserList', (data?: IUserListState['userList']) => ({
+export const setUserListRD = createCustomAction('user/setUserList', (data?: IUserListState['userList']) => ({
+  data,
+}))
+
+export const setUserRoles = createCustomAction('user/setUserRoles', (data?: IUserListState['userList']) => ({
   data,
 }))
 
@@ -15,7 +19,7 @@ type Action = ActionType<typeof actions>
 export default function reducer(state: IUserListState['userList'] = [], action: Action) {
   switch (action.type) {
     case getType(setUserListRD):
-      return action.data
+      return [action.data]
 
     default:
       return state

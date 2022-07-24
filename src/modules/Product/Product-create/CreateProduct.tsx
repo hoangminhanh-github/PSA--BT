@@ -15,8 +15,8 @@ import { fetchThunk } from 'modules/common/redux/thunk'
 import { API_PATHS } from 'configs/api'
 import { FormattedMessage } from 'react-intl'
 import { brandsSelector, categorySelector } from 'modules/Product/redux/selector'
-import Multi_Select from 'modules/Product/unti/multiSelect'
-import { initialValues } from 'modules/Product/unti/initialValues'
+import Multi_Select from 'modules/Product/ulti/multiSelect'
+import { initialValues } from 'modules/Product/ulti/initialValues'
 const CreateProduct = () => {
   const dispatch = useDispatch()
   const brandList = useSelector(brandsSelector)
@@ -43,7 +43,9 @@ const CreateProduct = () => {
   })
   const register = React.useCallback(
     async (values) => {
-      const json = await dispatch(fetchThunk(API_PATHS.createProduct, 'post', values))
+      const formdata = new FormData()
+      formdata.append('productDetail', JSON.stringify(values))
+      const json = await dispatch(fetchThunk(API_PATHS.createProduct, 'post', formdata, true, 'multipart/form-data'))
       console.log(json)
       // if (json?.success === true) {
       //   console.log(json.data)

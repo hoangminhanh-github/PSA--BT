@@ -7,8 +7,9 @@ import { useDispatch } from 'react-redux'
 
 import { IProduct, ICategory } from 'models/product'
 // import Multi_Select from 'utils/MultiSelect'
-import Multi_Select from '../../unti/muitiSelect'
-import { setUserSearch_search } from 'modules/users/UserList/redux/searchReducer'
+import Multi_Select from '../../ulti/muitiSelect'
+import { setUserSearch_search, setUserSearch_country } from 'modules/users/UserList/redux/searchReducer'
+import { userGetInValues } from '../../ulti/userGetInValues'
 interface country {
   active_currency: null
   code: string
@@ -21,8 +22,10 @@ interface country {
 }
 interface IProps {
   data?: country[]
+  handleSearch: any
 }
 const Filter = (props: IProps) => {
+  const handleSearch = props.handleSearch
   const [search, setSearch] = useState<string>()
 
   const dispatch = useDispatch()
@@ -31,7 +34,7 @@ const Filter = (props: IProps) => {
   // const handleSearch = () => {
   //   search && dispatch(setUserSearch_search(search))
   // }
-  console.log(countries)
+  // console.log(countries)
   return (
     <div className="filter">
       <h2>Search for user</h2>
@@ -68,16 +71,16 @@ const Filter = (props: IProps) => {
             </select> */}
             <Multi_Select
               options={[
-                { label: 'Administrator', value: 'Administrator' },
-                { label: 'Content management', value: 'Content management' },
-                { label: 'Coupons management', value: 'Coupons management' },
-                { label: 'Vendor', value: 'Vendor' },
-                { label: 'View order reports', value: 'View order reports' },
-                { label: 'Volume discounts management', value: 'Volume discounts management' },
+                { label: 'Administrator', value: '1' },
+                { label: 'Content management', value: '3' },
+                { label: 'Coupons management', value: '2' },
+                { label: 'Vendor', value: '5' },
+                { label: 'View order reports', value: '6' },
+                { label: 'Volume discounts management', value: '4' },
               ]}
             ></Multi_Select>
             {/* BUTTON */}
-            <button>Search</button>
+            <button onClick={() => handleSearch()}>Search</button>
           </summary>
           {/* bottom */}
           <div className="filter-main-bot">
@@ -86,12 +89,13 @@ const Filter = (props: IProps) => {
                 {/* 1 */}
                 <li>
                   <span>Country</span>
-                  <select placeholder="select country">
-                    <option value="" style={{ display: 'none' }}>
-                      Select Country
-                    </option>
+                  <select
+                    placeholder="select country"
+                    onChange={(e) => dispatch(setUserSearch_country(e.target.value))}
+                  >
+                    <option value="">All the Country</option>
                     {countries?.map((country, index) => (
-                      <option key={index} value={country.country}>
+                      <option key={index} value={country.code}>
                         {country.country}
                       </option>
                     ))}

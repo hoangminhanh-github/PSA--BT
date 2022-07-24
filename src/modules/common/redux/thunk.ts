@@ -1,9 +1,9 @@
-import { Action } from 'redux';
-import { ThunkAction } from 'redux-thunk';
-import { AppState } from '../../../redux/reducer';
-import { RESPONSE_STATUS_UNAUTHORIZED } from '../../../utils/httpResponseCode';
-import { ACCESS_TOKEN_KEY } from '../../../utils/constants';
-import Cookies from 'js-cookie';
+import { Action } from 'redux'
+import { ThunkAction } from 'redux-thunk'
+import { AppState } from '../../../redux/reducer'
+import { RESPONSE_STATUS_UNAUTHORIZED } from '../../../utils/httpResponseCode'
+import { ACCESS_TOKEN_KEY } from '../../../utils/constants'
+import Cookies from 'js-cookie'
 
 export function fetchThunk(
   url: string,
@@ -16,24 +16,26 @@ export function fetchThunk(
     const res = await fetch(url, {
       credentials: 'include',
       method,
-      body: typeof body === 'object' ? JSON.stringify(body) : body,
+      body: body instanceof FormData ? body : JSON.stringify(body),
       headers:
         contentType !== 'multipart/form-data'
           ? {
               'Content-Type': contentType || 'application/json',
               Authorization: Cookies.get(ACCESS_TOKEN_KEY) || '',
             }
-          : {},
+          : {
+              Authorization: Cookies.get(ACCESS_TOKEN_KEY) || '',
+            },
       cache: 'no-store',
-    });
+    })
 
-    const json = await res.json();
+    const json = await res.json()
 
     if (res.status === RESPONSE_STATUS_UNAUTHORIZED) {
       // dispatch logout, remove access token here.
     }
 
-    return json;
+    return json
     // throw new Error('Error');
-  };
+  }
 }

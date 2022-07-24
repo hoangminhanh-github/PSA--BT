@@ -19,7 +19,7 @@ const Product = lazy(() => import('./modules/Product/Product'))
 const UserList = lazy(() => import('./modules/users/UserList/UserList'))
 const UserCreate = lazy(() => import('./modules/users/UserCreate/UserCreate'))
 const userEdit = lazy(() => import('./modules/users/UserList/Components/User-edit/UserEdit'))
-const CreateProduct = lazy(() => import('./modules/Product/Components/Product-create/CreateProduct'))
+const CreateProduct = lazy(() => import('./modules/Product/Product-create/CreateProduct'))
 // const ProductEdit = lazy(() => import('./modules/Product/ProductEdit/ProductEdit'))
 const ProductEdit = lazy(() => import('./modules/Product/ProductEdit/ProductEdit'))
 
