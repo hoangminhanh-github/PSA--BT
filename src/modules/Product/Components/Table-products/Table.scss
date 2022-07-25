@@ -1,14 +1,6 @@
-button {
-  position: relative;
-  font-size: 24px;
-  color: white;
-  // padding: 2px;
-  border-radius: 4px;
-  background-color: #b18bff;
-}
 table {
   margin-left: 16px;
-
+  table-layout: fixed;
   height: 100%;
   background-color: rgb(50, 50, 89);
   th,
@@ -17,8 +9,9 @@ table {
     // border-style: hidden;
   }
   td {
-    // display: flex;
-    // align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .checkbox {
     margin-right: 8px;
@@ -57,11 +50,11 @@ table {
   list-style: none;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  // align-items: center;
   margin-bottom: 1rem;
   font-size: 1.2rem;
   gap: 5px;
-  background-color: rgb(50, 50, 89);
+  // background-color: rgb(0, 0, 0);
   height: 72px;
   color: white;
 }

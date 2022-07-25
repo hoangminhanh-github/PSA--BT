@@ -124,7 +124,7 @@ const SignUpPage = () => {
         dispatch(replace(ROUTES.login))
         return
       } else {
-        alert('ngu')
+        alert('err')
       }
     },
     [dispatch],

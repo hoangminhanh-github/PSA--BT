@@ -71,7 +71,7 @@ const ProductEdit = () => {
   return (
     <div className="create-product">
       <div className="create-product__heading">
-        <Link to={ROUTES.userList} className="create-product__heading-icon">
+        <Link to={ROUTES.product} className="create-product__heading-icon">
           <BsFillArrowLeftCircleFill></BsFillArrowLeftCircleFill>
         </Link>
         <h4>Add product</h4>

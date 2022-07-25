@@ -58,11 +58,16 @@ const CreateProduct = () => {
     },
     [dispatch],
   )
-
+  const empty: any = []
+  const handleCHOSSE = (files: any) => {
+    // empty.push(files)
+    const hehe = { ...files }
+    console.log(hehe)
+  }
   return (
     <div className="create-product">
       <div className="create-product__heading">
-        <Link to={ROUTES.userList} className="create-product__heading-icon">
+        <Link to={ROUTES.product} className="create-product__heading-icon">
           <BsFillArrowLeftCircleFill></BsFillArrowLeftCircleFill>
         </Link>
         <h4>Add product</h4>
@@ -102,7 +107,7 @@ const CreateProduct = () => {
             </li>
             <li>
               <span>Images *</span>
-              <input type="file" multiple id="input" />
+              <input type="file" multiple id="input" onChange={(e) => handleCHOSSE(e.target.files)} />
               <div className="hehe" ref={hehe}></div>
             </li>
             <li>

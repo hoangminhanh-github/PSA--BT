@@ -55,9 +55,7 @@ const Table = (props: IProps) => {
             <th scope="col">
               <input type="checkbox" name="" id="" />
             </th>
-            <th scope="col" style={{ width: '70px' }}>
-              Login/Email
-            </th>
+            <th scope="col">Login/Email</th>
             <th scope="col">Name</th>
             <th scope="col"> Access level</th>
             <th scope="col">Products </th>
@@ -78,8 +76,9 @@ const Table = (props: IProps) => {
         </tbody>
       </table>
 
-      <Stack spacing={2} className="pagination">
+      <Stack spacing={2} className="pagination ">
         <Pagination
+          className="pagination"
           color="secondary"
           count={totalPage}
           defaultPage={1}

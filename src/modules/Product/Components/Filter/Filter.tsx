@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import './Filter.scss'
+import './FilterP.scss'
 import { IProduct, ICategory } from 'models/product'
 import { waitFor } from '@testing-library/react'
 import { useDispatch } from 'react-redux'

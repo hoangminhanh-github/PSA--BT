@@ -52,34 +52,26 @@ table {
   list-style: none;
   display: flex;
   justify-content: flex-start;
-  align-items: center;
   margin-bottom: 1rem;
   font-size: 1.2rem;
   gap: 5px;
   background-color: rgb(50, 50, 89);
   height: 72px;
   color: white;
-}
-.pagination .page-num {
-  padding: 6px 16px;
-  cursor: pointer;
-  border-radius: 3px;
-  font-weight: 400;
-  border: 1px solid #000;
-  color: white;
-  text-decoration: none;
-}
-.pagination .page-num:hover {
-  background-color: #b18bff;
-}
-.active {
-  background-color: #b18bff;
-}
-.pagination {
-  justify-content: center;
-  align-items: flex-start;
-  button {
-    border-radius: 2px;
+  & button {
+    padding: 6px 16px;
+    cursor: pointer;
+    border-radius: 3px;
+    font-weight: 400;
+    border: 1px solid #000;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      background-color: #b18bff;
+    }
+  }
+  .active {
     background-color: #b18bff;
   }
   li {
@@ -89,3 +81,24 @@ table {
     background-color: red;
   }
 }
+
+// .pagination .page-num:hover {
+//   background-color: #b18bff;
+// }
+// .active {
+//   background-color: #b18bff;
+// }
+// .pagination {
+//   justify-content: center;
+//   align-items: flex-start;
+//   button {
+//     border-radius: 2px;
+//     background-color: #b18bff;
+//   }
+//   li {
+//     margin-right: 6px;
+//   }
+//   .Mui-selected {
+//     background-color: red;
+//   }
+// }

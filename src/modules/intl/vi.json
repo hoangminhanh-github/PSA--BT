@@ -18,5 +18,8 @@
   "regionRequire":"Quốc gia không được để trống",
   "matchPasswordRequire":"Xác nhận lại mật khẩu không chính xác",
   "name":"Họ và tên",
-  "gender":"Gioi tính"
+  "gender":"Gioi tính",
+  "deleteSuccess":"Xóa thành công",
+  "deleteError":"Xóa thất bại",
+  "NotDelete":"Đã chọn không xóa"
 }

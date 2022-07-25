@@ -39,7 +39,7 @@ const Table = ({ data, totalPage, setPageCurrent, pageCurrent }: IProps) => {
             <th scope="col">
               <input type="checkbox" name="" id="" />
             </th>
-            <th scope="col" style={{ width: '70px' }}>
+            <th scope="col" style={{ width: '180px' }}>
               SKU
             </th>
             <th scope="col">NAME</th>
@@ -60,7 +60,7 @@ const Table = ({ data, totalPage, setPageCurrent, pageCurrent }: IProps) => {
         </tbody>
       </table>
 
-      <Stack spacing={2} className="pagination">
+      <Stack spacing={2} className="product-pagination">
         <Pagination
           color="secondary"
           defaultPage={1}
