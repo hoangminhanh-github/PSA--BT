@@ -30,6 +30,7 @@ export const API_PATHS = {
   productDetails: 'https://api.gearfocus.div4.pgtest.co/apiAdmin/products/detail',
   productDelete: 'https://api.gearfocus.div4.pgtest.co/apiAdmin/products/edit',
   getRoles: 'https://api.gearfocus.div4.pgtest.co/apiAdmin/commons/role',
+  getVendor: 'https://api.gearfocus.div4.pgtest.co/apiAdmin/vendors/list',
   signUp: `${getBaseUrl(APIService.auth)}/register`,
   userProfile: `${getBaseUrl(APIService.public)}/user`,
   getLocation: `${getBaseUrl(APIService.public)}/location`,

@@ -12,6 +12,7 @@ import { FormattedMessage } from 'react-intl'
 import { API_PATHS } from 'configs/api'
 import { replace } from 'connected-react-router'
 import { ROUTES } from 'configs/routes'
+import { Link } from 'react-router-dom'
 export interface IProps {
   data?: IUserDetails
 }
@@ -69,9 +70,9 @@ const UserDetails = (props: IProps) => {
   )
   return (
     <div className="user-details">
-      <a href="#">
+      <Link to={ROUTES.userList}>
         <BsFillArrowLeftCircleFill></BsFillArrowLeftCircleFill>
-      </a>
+      </Link>
       <h3>{userDetails?.email}</h3>
       <form action="" onSubmit={formik.handleSubmit}>
         <ul>

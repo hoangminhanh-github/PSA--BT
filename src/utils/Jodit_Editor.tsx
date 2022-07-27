@@ -2,14 +2,22 @@ import * as React from 'react'
 import JoditReact from 'jodit-react-ts'
 import 'jodit/build/jodit.min.css'
 
-const Jodit_Editor = (props: { defaultValues?: string | undefined }) => {
+const Jodit_Editor = (props: { defaultValues?: string | undefined; formik?: any }) => {
+  const formik = props.formik
   const defaultValue = props.defaultValues
-  console.log(defaultValue)
   const [value, setValue] = React.useState<string>()
+
+  const handleChange = (content: string) => {
+    setValue(content)
+  }
+  // formik.values.description = value
+  if (formik) {
+    formik.values.description = value
+  }
 
   return (
     <div className="jodit">
-      <JoditReact onChange={(content) => setValue(content)} defaultValue={defaultValue ? defaultValue : 'hehe'} />
+      <JoditReact onChange={(content) => handleChange(content)} defaultValue={defaultValue ? defaultValue : 'hehe'} />
     </div>
   )
 }

@@ -33,7 +33,6 @@ const Multi_Select = (props: IProps) => {
   const prevValues = props.selected?.map((a: any) => {
     return { label: a.name, value: a.category_id }
   })
-  console.log(selected)
   return (
     <MultiSelect
       className="multi-select"

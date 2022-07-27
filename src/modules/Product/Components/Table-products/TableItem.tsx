@@ -31,7 +31,8 @@ const TableItem = (props: IProps) => {
         )
         if (json.success) {
           await alert('Xóa thành công sản phẩm')
-          dispatch(replace(ROUTES.home))
+          window.location.reload()
+          // dispatch(replace(ROUTES.product))
         }
       } catch {
         alert('Error')

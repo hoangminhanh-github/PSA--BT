@@ -17,6 +17,8 @@ import { productGetInValues } from 'modules/Product/ulti/productGetInValues'
 import Loading from 'modules/common/components/Loading/Loading'
 import * as productFilter from './redux/selector'
 import { search_keywordProducts } from './redux/selector'
+import { setVendor } from './redux/vendorReducer'
+setVendor
 const Product = () => {
   const dispatch = useDispatch()
   const [products, setProduct] = useState([])
@@ -84,10 +86,16 @@ const Product = () => {
     setPageCurrent(1)
     isLoading(false)
   }
+  const getVendor = async () => {
+    const json: any = await dispatch(fetchThunk(API_PATHS.getVendor, 'post', {}))
+    const data = json.data
+    data && dispatch(setVendor(data))
+  }
   useEffect(() => {
     getCategory()
     getBrandList()
     getAllProduct()
+    getVendor()
   }, [])
 
   useEffect(() => {

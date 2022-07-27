@@ -1,6 +1,6 @@
 /* eslint-disable */
 import { ROUTES } from 'configs/routes'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 import { useFormik, Field, FastField, Form } from 'formik'
@@ -17,53 +17,47 @@ import { FormattedMessage } from 'react-intl'
 import { brandsSelector, categorySelector } from 'modules/Product/redux/selector'
 import Multi_Select from 'modules/Product/ulti/multiSelect'
 import { initialValues } from 'modules/Product/ulti/initialValues'
+import UploadImg from 'modules/common/components/react-img-upload/UploadImg'
+import { replace } from 'connected-react-router'
+import ComboBox from '../Components/Autocomplete/autocomplete'
 const CreateProduct = () => {
+  const [numberSKU, setNumberSKU] = useState(Math.floor(100000 + Math.random() * 9000000000000).toString())
   const dispatch = useDispatch()
   const brandList = useSelector(brandsSelector)
   const categorySelect = useSelector(categorySelector)
-  const hehe = useRef(null)
   const formik = useFormik({
-    initialValues: initialValues,
-    // validationSchema: Yup.object({
-    //   firstName: Yup.string().required('').min(4, 'Must be 4 characters or more'),
-    //   lastName: Yup.string().required('').min(4, 'Must be 4 characters or more'),
-    //   email: Yup.string()
-    //     .required('Required')
-    //     .matches(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/, 'Please enter a valid email address'),
-    //   password: Yup.string().required('Required').min(6, 'Must be 6 characters or more'),
-    //   confirm_password: Yup.string()
-    //     .required('Required')
-    //     .oneOf([Yup.ref('password'), null], 'Password must match'),
-    // }),
+    initialValues: { ...initialValues, sku: numberSKU },
+    validationSchema: Yup.object({
+      name: Yup.string().required('Trường này bắt buộc'),
+      brand_id: Yup.string().required('Trường này bắt buộc'),
+      description: Yup.string().required('Trường này bắt buộc'),
+      price: Yup.number().required('Trường này bắt buộc là số'),
+    }),
     // hàm submit mặc định của formilk         (sửa)
     onSubmit: (values) => {
-      console.log(formik.values)
+      // console.log(formik.values)
+      // console.log(formik)
       register(formik.values)
     },
   })
   const register = React.useCallback(
     async (values) => {
-      const formdata = new FormData()
-      formdata.append('productDetail', JSON.stringify(values))
-      const json = await dispatch(fetchThunk(API_PATHS.createProduct, 'post', formdata, true, 'multipart/form-data'))
-      console.log(json)
-      // if (json?.success === true) {
-      //   console.log(json.data)
-      //   alert('Chúc mừng bạn đã đăng kí thành công')
-      //   dispatch(replace(ROUTES.userList))
-      //   return
-      // } else {
-      //   alert('haizz')
-      // }
+      const formData = new FormData()
+      formData.append('productDetail', JSON.stringify(values))
+      const json: any = await dispatch(
+        fetchThunk(API_PATHS.createProduct, 'post', formData, true, 'multipart/form-data'),
+      )
+      if (json?.success === true) {
+        console.log(json.data)
+        alert('Chúc mừng bạn đã đăng kí thành công')
+        dispatch(replace(ROUTES.product))
+        return
+      } else {
+        alert(json?.error)
+      }
     },
     [dispatch],
   )
-  const empty: any = []
-  const handleCHOSSE = (files: any) => {
-    // empty.push(files)
-    const hehe = { ...files }
-    console.log(hehe)
-  }
   return (
     <div className="create-product">
       <div className="create-product__heading">
@@ -77,22 +71,28 @@ const CreateProduct = () => {
           <ul>
             <li>
               <span>Vendor *</span>
-              <input
+              {/* <input
                 id=""
                 name=""
                 type="text"
                 placeholder="Type Vendor name to select"
                 onChange={formik.handleChange}
-              />
+              /> */}
+              <ComboBox></ComboBox>
             </li>
             <li>
               <span>Product Title *</span>
-              <input id="" name="" type="text" onChange={formik.handleChange} />
+              <input id="" name="name" type="text" onChange={formik.handleChange} />
+              {formik.errors.name && formik.touched.name && (
+                // <div className="danger-alert">
+                <span className="danger-alert">{formik.errors.name}</span>
+                // </div>
+              )}
             </li>
             <li>
               <span>Brand *</span>
               {/* <input id="" name="" type="text" onChange={formik.handleChange} /> */}
-              <select name="" id="">
+              <select name="brand_id" id="" onChange={formik.handleChange}>
                 <option value="" disabled selected hidden>
                   Type brand name to select
                 </option>
@@ -100,15 +100,25 @@ const CreateProduct = () => {
                   <option value={brand.id}>{brand.name}</option>
                 ))}
               </select>
+              {formik.errors.brand_id && formik.touched.brand_id && (
+                // <div className="danger-alert">
+                <span className="danger-alert">{formik.errors.brand_id}</span>
+                // </div>
+              )}
             </li>
             <li>
               <span>Sku</span>
-              <span>{Math.floor(100000 + Math.random() * 9000000000000)}</span>
+              <input
+                name="sku"
+                type="text"
+                style={{ backgroundColor: 'transparent', color: 'white' }}
+                value={numberSKU}
+                readOnly
+              />
             </li>
-            <li>
+            <li style={{ display: 'flex' }}>
               <span>Images *</span>
-              <input type="file" multiple id="input" onChange={(e) => handleCHOSSE(e.target.files)} />
-              <div className="hehe" ref={hehe}></div>
+              <UploadImg formik={formik}></UploadImg>
             </li>
             <li>
               <span>Category *</span>
@@ -118,7 +128,7 @@ const CreateProduct = () => {
             <li>
               <span>Description *</span>
               {/* <input type="text" /> */}
-              <Jodit_Editor />
+              <Jodit_Editor formik={formik} />
             </li>
           </ul>
           <div className="line"></div>
@@ -126,7 +136,12 @@ const CreateProduct = () => {
             <h3>Prices & Inventory</h3>
             <li>
               <span>Price</span>
-              <input type="text" />
+              <input type="text" name="price" onChange={formik.handleChange} />
+              {formik.errors.price && formik.touched.price && (
+                // <div className="danger-alert">
+                <span className="danger-alert">Trường này là phải số</span>
+                // </div>
+              )}
             </li>
             <li>
               <span>Arrival date</span>
