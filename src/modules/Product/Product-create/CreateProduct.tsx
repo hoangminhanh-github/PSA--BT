@@ -78,7 +78,7 @@ const CreateProduct = () => {
                 placeholder="Type Vendor name to select"
                 onChange={formik.handleChange}
               /> */}
-              <ComboBox></ComboBox>
+              <ComboBox formik={formik}></ComboBox>
             </li>
             <li>
               <span>Product Title *</span>

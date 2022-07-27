@@ -1,5 +1,5 @@
 export const initialValues = {
-  vendor_id: '11798',
+  vendor_id: '',
   name: '',
   brand_id: '',
   condition_id: '292',
